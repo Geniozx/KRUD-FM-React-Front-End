@@ -7,16 +7,22 @@ import { UserContext } from '../../contexts/UserContext';
 
 const SignUpForm = () => {
 
-  const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
-  const [message, setMessage] = useState('');
-  const [formData, setFormData] = useState({
+  const initStat = {
     username: '',
     password: '',
     passwordConf: '',
-  });
+    bio: '',
+    callSign: '',
+    broadcastLocation: '',
+    logo: '',
+  }
 
-  const { username, password, passwordConf } = formData;
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
+  const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState(initStat);
+
+  const { username, password, passwordConf, bio, callSign, broadcastLocation, logo } = formData;
 
   const handleChange = (evt) => {
     setMessage('');
@@ -77,6 +83,48 @@ const SignUpForm = () => {
             name='passwordConf'
             onChange={handleChange}
             required
+          />
+        </div>
+        <div>
+          <label htmlFor='bio'>Bio:</label>
+          <textarea
+            type='bio'
+            id='bio'
+            value={bio}
+            name='bio'
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor='callSign'>Call Sign:</label>
+          <input
+            type='callSign'
+            id='callSign'
+            value={callSign}
+            name='callSign'
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor='broadcastLocation'>Broadcast Location:</label>
+          <input
+            type='broadcastLocation'
+            id='broadcastLocation'
+            value={broadcastLocation}
+            name='broadcastLocation'
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor='logo'>Logo:</label>
+          <input
+            type='logo'
+            id='logo'
+            value={logo}
+            name='logo'
+            onChange={handleChange}
           />
         </div>
         <div>
