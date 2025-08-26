@@ -23,6 +23,7 @@ const NavBar = () => {
           <li>Welcome, {user.username}</li>
           <li><Link to='/'>Dashboard</Link></li>
           <li><Link to ='/playlists'>Playlist Catalog</Link></li>
+          <li><Link to ='/playlists/new'>Create Playlist</Link></li>
           <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
         </ul>
       ) : (
