@@ -50,6 +50,20 @@ const update = async (playlistId, playlistFormData) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+const deletePlaylist = async (playlistId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${playlistId}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+        });
+        return res.json();
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
@@ -59,4 +73,5 @@ export {
     show,
     create,
     update,
+    deletePlaylist,
 };
