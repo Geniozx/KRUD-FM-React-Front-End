@@ -25,10 +25,9 @@ const PlaylistDetails = () => {
         <header>
           <h1>{playlist.playlist}</h1>
           <p>
-            {`${playlist.author} posted on
-            ${new Date(playlist.createdAt).toLocaleDateString()}`}
+            {playlist.author.username}
           </p>
-          // add addtl details related to model here, like genre
+         {/* add addtl details related to model here, like genre */}
         </header>
       </section>
     </main>
