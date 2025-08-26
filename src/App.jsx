@@ -42,6 +42,12 @@ const App = () => {
     navigate(`/playlists/${playlistId}`);
   };
 
+  const handleDeletePlaylist = async (playlistId) => {
+    const deletedPlaylist = await playlistService.deletePlaylist(playlistId);
+    setPlaylists(playlists.filter((playlist) => playlist._id !== deletedPlaylist._id));
+    navigate('/playlists');
+  }
+
   return (
     <>
       <NavBar />
@@ -50,7 +56,7 @@ const App = () => {
           <>
             <Route path='/' element={user ? <Dashboard /> : <Landing />} />
             <Route path='/playlists' element={<PlaylistList playlists={playlists} />} />
-            <Route path='/playlists/:playlistId' element={<PlaylistDetails />} />
+            <Route path='/playlists/:playlistId' element={<PlaylistDetails handleDeletePlaylist={handleDeletePlaylist}/>} />
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
             <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
           </>

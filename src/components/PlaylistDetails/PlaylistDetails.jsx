@@ -5,7 +5,7 @@ import { UserContext } from '../../contexts/UserContext';
 import * as playlistService from '../../services/playlistService';
 
 
-const PlaylistDetails = () => {
+const PlaylistDetails = (props) => {
     const { playlistId } = useParams();
     const { user } = useContext(UserContext);
     const [playlist, setPlaylist] = useState(null);
@@ -32,6 +32,9 @@ const PlaylistDetails = () => {
           {playlist.author._id === user._id && (
              <>
               <Link to={`/playlists/${playlistId}/edit`}>Edit</Link>
+              <button onClick={() => props.handleDeletePlaylist(playlistId)}>
+                Delete
+                </button>
             </>
           )}
         </header>
