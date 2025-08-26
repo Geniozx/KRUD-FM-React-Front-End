@@ -11,6 +11,20 @@ const index = async () => {
     }
 };
 
+const show = async (playlistId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${playlistId}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },  
+        });
+        return res.json();
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+
 export {
     index,
+    show,
 };

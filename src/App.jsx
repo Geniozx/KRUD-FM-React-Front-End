@@ -10,6 +10,10 @@ import PlaylistList from './components/PlaylistList/PlaylistList';
 import * as playlistService from './services/playlistService'
 
 import { UserContext } from './contexts/UserContext';
+import PlaylistDetails from './components/PlaylistDetails/PlaylistDetails';
+
+
+
 
 const App = () => {
   const { user } = useContext(UserContext);
@@ -19,7 +23,7 @@ const App = () => {
     const fetchAllPlaylists = async () => {
       const playlistsData = await playlistService.index();
 
-     setPlaylists(playlistsData);
+      setPlaylists(playlistsData);
     };
     if (user) fetchAllPlaylists();
   }, [user]);
@@ -27,15 +31,24 @@ const App = () => {
   return (
     <>
       <NavBar />
-      {/* Add the Routes component to wrap our individual routes*/}
       <Routes>
-        <Route path='/' element={user ? <Dashboard /> : <Landing />} />
-        <Route path='/sign-up' element={<SignUpForm />} />
-        <Route path='/sign-in' element={<SignInForm />} />
-        <Route path='/playlists' element={<PlaylistList playlists={playlists} />} />
+        {user ? (
+          <>
+            <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+            <Route path='/playlists' element={<PlaylistList playlists={playlists} />} />
+            <Route path='/playlists/:playlistId' element={<PlaylistDetails />} />
+          </>
+        ) : (
+          <>
+            <Route path='/sign-up' element={<SignUpForm />} />
+            <Route path='/sign-in' element={<SignInForm />} />
+          </>
+        )};
+
       </Routes>
     </>
   );
 };
+
 
 export default App;
