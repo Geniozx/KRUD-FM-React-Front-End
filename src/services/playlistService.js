@@ -36,10 +36,27 @@ const create = async (playlistFormData) => {
     }
 }
 
+const update = async (playlistId, playlistFormData) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${playlistId}`, {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(playlistFormData),
+        });
+        return res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 
 export {
     index,
     show,
     create,
+    update,
 };

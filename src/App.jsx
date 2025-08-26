@@ -36,6 +36,12 @@ const App = () => {
     navigate('/playlists');
   }
 
+  const handleUpdatePlaylist = async (playlistId, playlistFormData) => {
+    const updatedPlaylist = await playlistService.update(playlistId, playlistFormData);
+    setPlaylists(playlists.map((playlist) => (playlistId === playlist._id ? updatedPlaylist : playlist)));
+    navigate(`/playlists/${playlistId}`);
+  };
+
   return (
     <>
       <NavBar />
@@ -45,7 +51,8 @@ const App = () => {
             <Route path='/' element={user ? <Dashboard /> : <Landing />} />
             <Route path='/playlists' element={<PlaylistList playlists={playlists} />} />
             <Route path='/playlists/:playlistId' element={<PlaylistDetails />} />
-            <Route path='playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
+            <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
+            <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
           </>
         ) : (
           <>

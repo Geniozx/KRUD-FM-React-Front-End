@@ -1,11 +1,13 @@
-import { useParams } from 'react-router';
-import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router';
+import { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
 
 import * as playlistService from '../../services/playlistService';
 
 
 const PlaylistDetails = () => {
     const { playlistId } = useParams();
+    const { user } = useContext(UserContext);
     const [playlist, setPlaylist] = useState(null);
 
     useEffect(() => {
@@ -20,14 +22,18 @@ const PlaylistDetails = () => {
     console.log('playlistId', playlistId);
     if (!playlist) return <main>Loading........</main>;
     return(
-          <main>
+      <main>
       <section>
         <header>
           <h1>{playlist.playlist}</h1>
           <p>
             {playlist.author.username}
           </p>
-         {/* add addtl details related to model here, like genre */}
+          {playlist.author._id === user._id && (
+             <>
+              <Link to={`/playlists/${playlistId}/edit`}>Edit</Link>
+            </>
+          )}
         </header>
       </section>
     </main>

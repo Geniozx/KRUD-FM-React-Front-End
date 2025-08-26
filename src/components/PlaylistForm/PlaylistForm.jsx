@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from 'react-router';
+import * as playlistService from '../../services/playlistService';
 
 const formInit = {
     playlist: '',
@@ -7,6 +9,8 @@ const formInit = {
 };
 
 const PlaylistForm = (props) => {
+    const { playlistId } = useParams();
+    console.log(playlistId);
     const [formData, setFormData] = useState(formInit);
 
 
@@ -16,10 +20,26 @@ const PlaylistForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        props.handleAddPlaylist(formData);
-    }
+        if (playlistId) {
+            props.handleUpdatePlaylist(playlistId, formData);
+        } else {
+            props.handleAddPlaylist(formData);
+        }
+    };
+
+    useEffect(() => {
+        const fetchPlaylist = async () => {
+            const playlistData = await playlistService.show(playlistId);
+            setFormData(playlistData);
+        };
+        if (playlistId) fetchPlaylist();
+
+        return () => setFormData(formInit)
+    }, [playlistId]);
+
     return (
         <main>
+            <h1>{playlistId ? 'Edit Playlist' : 'New Playlist'}</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='playlist-name'>Playlist</label>
                 <input
