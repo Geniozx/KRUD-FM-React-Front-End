@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}playlists`;
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/playlists`;
 
 const index = async () => {
     try {
