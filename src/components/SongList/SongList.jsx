@@ -6,7 +6,7 @@ const SongList = (props) => {
             <h1>Song Library</h1>
             {props.songs.map((song) => (
                 <ul>
-                    <li><Link key={song._id} to = {`songs/${song._id}`}>{song.track} by {song.artist}</Link></li>
+                    <li><Link key={song._id} to = {`/songs/${song._id}`}>{song.track}</Link></li>
                 </ul>
             ))}
         </main>
