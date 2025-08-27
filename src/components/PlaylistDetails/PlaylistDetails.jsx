@@ -6,23 +6,26 @@ import * as playlistService from '../../services/playlistService';
 
 
 const PlaylistDetails = (props) => {
-    const { playlistId } = useParams();
-    const { user } = useContext(UserContext);
-    const [playlist, setPlaylist] = useState(null);
+  const { playlistId } = useParams();
+  const { user } = useContext(UserContext);
+  const [playlist, setPlaylist] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
 
-        const fetchPlaylist = async () => {
-            const playlistData = await playlistService.show(playlistId);
-            setPlaylist(playlistData);
-        };
-        fetchPlaylist();
-    
-    }, [playlistId]);
-    console.log('playlistId', playlistId);
-    if (!playlist) return <main>Loading........</main>;
-    return(
-      <main>
+    const fetchPlaylist = async () => {
+      const playlistData = await playlistService.show(playlistId);
+      setPlaylist(playlistData);
+    };
+    fetchPlaylist();
+
+  }, [playlistId]);
+  console.log('playlistId', playlistId);
+  console.log('user:', playlist)
+  if (!playlist) return <main>Loading........</main>;
+  return (
+    <main>
+      <h1>Welcome, {user.username}</h1>
+
       <section>
         <header>
           <h1>{playlist.playlist}</h1>
@@ -30,17 +33,17 @@ const PlaylistDetails = (props) => {
             {playlist.author.username}
           </p>
           {playlist.author._id === user._id && (
-             <>
+            <>
               <Link to={`/playlists/${playlistId}/edit`}>Edit</Link>
               <button onClick={() => props.handleDeletePlaylist(playlistId)}>
                 Delete
-                </button>
+              </button>
             </>
           )}
         </header>
       </section>
     </main>
-    )
+  )
 };
 
 
