@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Routes, Route, useNavigate} from 'react-router';
+import { Routes, Route, useNavigate } from 'react-router';
 
 import NavBar from './components/NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
@@ -9,6 +9,8 @@ import Dashboard from './components/Dashboard/Dashboard';
 import PlaylistList from './components/PlaylistList/PlaylistList';
 import * as playlistService from './services/playlistService'
 import PlaylistForm from './components/PlaylistForm/PlaylistForm';
+import SongList from './components/SongList/SongList';
+import * as songService from './services/songService'
 
 
 import { UserContext } from './contexts/UserContext';
@@ -19,8 +21,11 @@ import PlaylistDetails from './components/PlaylistDetails/PlaylistDetails';
 
 const App = () => {
   const { user } = useContext(UserContext);
-  const [playlists, setPlaylists] = useState([]);
   const navigate = useNavigate();
+
+  // ---------------------PLAYLISTS--------------------------------- //
+  const [playlists, setPlaylists] = useState([]);
+
   useEffect(() => {
     const fetchAllPlaylists = async () => {
       const playlistsData = await playlistService.index();
@@ -46,7 +51,20 @@ const App = () => {
     const deletedPlaylist = await playlistService.deletePlaylist(playlistId);
     setPlaylists(playlists.filter((playlist) => playlist._id !== deletedPlaylist._id));
     navigate('/playlists');
-  }
+  };
+
+  // ---------------------SONGS--------------------------------- //
+  const [songs, setSongs] = useState([]);
+
+  useEffect(() => {
+    const fetchAllSongs = async () => {
+      const songsData = await songService.index();
+      setSongs(songsData);
+    };
+    if (user) fetchAllSongs();
+  }, [user]);
+
+
 
   return (
     <>
@@ -56,9 +74,10 @@ const App = () => {
           <>
             <Route path='/' element={user ? <Dashboard /> : <Landing />} />
             <Route path='/playlists' element={<PlaylistList playlists={playlists} />} />
-            <Route path='/playlists/:playlistId' element={<PlaylistDetails handleDeletePlaylist={handleDeletePlaylist}/>} />
+            <Route path='/playlists/:playlistId' element={<PlaylistDetails handleDeletePlaylist={handleDeletePlaylist} />} />
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
             <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
+            <Route path='/songs' element={<SongList songs={songs} />} />
           </>
         ) : (
           <>
