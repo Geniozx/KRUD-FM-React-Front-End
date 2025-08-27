@@ -73,7 +73,7 @@ const App = () => {
 
   const handleDeleteSong = async (songId) => {
     const deletedSong = await songService.deleteSong(songId);
-    setSongs(songs.filter((song) => song._id !== deletedSong.songId));
+    setSongs(songs.filter((song) => song._id !== deletedSong._id));
     navigate('/songs');
   };
 
