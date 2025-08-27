@@ -12,6 +12,7 @@ import PlaylistForm from './components/PlaylistForm/PlaylistForm';
 import SongList from './components/SongList/SongList';
 import * as songService from './services/songService'
 import SongDetails from './components/SongDetails/SongDetails';
+import SongForm from './components/SongForm/SongForm';
 
 import { UserContext } from './contexts/UserContext';
 import PlaylistDetails from './components/PlaylistDetails/PlaylistDetails';
@@ -64,6 +65,11 @@ const App = () => {
     if (user) fetchAllSongs();
   }, [user]);
 
+  const handleAddSong = async (songFormData) => {
+    const newSong = await songService.create(songFormData);
+    setSongs([newSong, ...songs]);
+    navigate('/songs');
+  };
 
 
   return (
@@ -78,7 +84,8 @@ const App = () => {
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
             <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
             <Route path='/songs' element={<SongList songs={songs} />} />
-            <Route path='/songs/:songId' element={<SongDetails />}/>
+            <Route path='/songs/:songId' element={<SongDetails />} />
+            <Route path='/songs/new' element={<SongForm handleAddSong={handleAddSong}/>}/>
           </>
         ) : (
           <>
