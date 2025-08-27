@@ -71,6 +71,11 @@ const App = () => {
     navigate('/songs');
   };
 
+  const handleDeleteSong = async (songId) => {
+    const deletedSong = await songService.deleteSong(songId);
+    setSongs(songs.filter((song) => song._id !== deletedSong.songId));
+    navigate('/songs');
+  };
 
   return (
     <>
@@ -84,7 +89,7 @@ const App = () => {
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
             <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
             <Route path='/songs' element={<SongList songs={songs} />} />
-            <Route path='/songs/:songId' element={<SongDetails />} />
+            <Route path='/songs/:songId' element={<SongDetails handleDeleteSong={handleDeleteSong} />} />
             <Route path='/songs/new' element={<SongForm handleAddSong={handleAddSong}/>}/>
           </>
         ) : (

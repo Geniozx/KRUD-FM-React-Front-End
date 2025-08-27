@@ -36,10 +36,25 @@ const create = async (songFormData) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
+
+const deleteSong = async (songId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${songId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return res.json();
+  } catch(error) {
+    console.log(error);
+  }
+};
 
 export {
   index,
   show,
   create,
+  deleteSong,
 };
