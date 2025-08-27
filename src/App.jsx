@@ -11,7 +11,7 @@ import * as playlistService from './services/playlistService'
 import PlaylistForm from './components/PlaylistForm/PlaylistForm';
 import SongList from './components/SongList/SongList';
 import * as songService from './services/songService'
-
+import SongDetails from './components/SongDetails/SongDetails';
 
 import { UserContext } from './contexts/UserContext';
 import PlaylistDetails from './components/PlaylistDetails/PlaylistDetails';
@@ -78,6 +78,7 @@ const App = () => {
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
             <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
             <Route path='/songs' element={<SongList songs={songs} />} />
+            <Route path='/songs/:songId' element={<SongDetails />}/>
           </>
         ) : (
           <>
