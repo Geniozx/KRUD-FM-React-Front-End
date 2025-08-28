@@ -5,11 +5,12 @@ const SongList = (props) => {
         <main>
             <h1>Song Library</h1>
             {props.songs.map((song) => (
-                <ul key={song._id}>
-                    <li><Link to = {`/songs/${song._id}`}>
-                    <p key={song._id}>"{song.track}" by {song.artist}, Album: {song.album}</p>
-                    </Link></li>
-                </ul>
+                <div key={song._id}>
+                    <span>{song.track} - {song.artist}</span>
+                    <button onClick={() => props.handleAddSongToPlaylist(props.playlistId, song._id)}>
+                        Add
+                    </button>
+                </div>
             ))}
         </main>
     )
