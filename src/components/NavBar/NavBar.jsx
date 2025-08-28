@@ -1,10 +1,7 @@
-// src/components/NavBar/NavBar.jsx
+import styles from './NavBar.module.css';
 
-// Import the useContext hook
 import { useContext } from 'react';
 import { Link } from 'react-router';
-
-// Import the UserContext object
 import { UserContext } from '../../contexts/UserContext';
 
 const NavBar = () => {
@@ -17,7 +14,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav>
+    <nav className={styles.container}>
       {user ? (
         <ul>
           <li>Welcome, {user.username}</li>
