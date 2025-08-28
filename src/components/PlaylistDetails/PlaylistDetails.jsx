@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router';
 import { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
+import SongSelector from '../SongSelector/SongSelector';
 
 import * as playlistService from '../../services/playlistService';
 
@@ -19,6 +20,12 @@ const PlaylistDetails = (props) => {
     fetchPlaylist();
 
   }, [playlistId]);
+
+  useEffect(() => {
+    fetch(`/api/playlists/${playlistId}`)
+    .then(res => res.json())
+    .then(data => setPlaylist(data))
+  }, [playlistId])
   console.log('playlistId', playlistId);
   console.log('user:', playlist)
   if (!playlist) return <main>Loading........</main>;
@@ -29,6 +36,21 @@ const PlaylistDetails = (props) => {
       <section>
         <header>
           <h1>{playlist.playlist}</h1>
+          {playlist.author._id === user._id && ( 
+            <SongSelector
+            playlistId={playlistId} 
+            onSongAdded={(updated) => setPlaylist(updated)} />
+          )}
+          <section>
+            <h2>Current Songs</h2>
+            <ul>
+              {playlist.songs.map((song) => (
+                <li key={song._id}>
+                  {song.track}
+                </li>
+              ))}
+            </ul>
+          </section>
           <p>
             {playlist.author.username}
           </p>
