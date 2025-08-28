@@ -7,7 +7,7 @@ const SongList = (props) => {
             {props.songs.map((song) => (
                 <ul key={song._id}>
                     <li><Link to = {`/songs/${song._id}`}>
-                    <p key={song._id}>{song.track}</p>
+                    <p key={song._id}>"{song.track}" by {song.artist}, Album: {song.album}</p>
                     </Link></li>
                 </ul>
             ))}
