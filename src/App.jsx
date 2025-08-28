@@ -27,6 +27,7 @@ const App = () => {
   // ---------------------PLAYLISTS--------------------------------- //
   const [playlists, setPlaylists] = useState([]);
 
+
   useEffect(() => {
     const fetchAllPlaylists = async () => {
       const playlistsData = await playlistService.index();
@@ -77,6 +78,15 @@ const App = () => {
     navigate('/songs');
   };
 
+  // ---------------------API--------------------------------- //
+  const [playlistSongs, setPlaylistSongs] = useState([])
+
+  const handleAddSongToPlaylist = async (playlistId, songId) => {
+    const addedSong = await playlistService.postSongToPlaylist(playlistId, songId);
+    setPlaylistSongs([addedSong, ...playlistSongs])
+  };
+
+
   return (
     <>
       <NavBar />
@@ -85,10 +95,10 @@ const App = () => {
           <>
             <Route path='/' element={user ? <Dashboard /> : <Landing />} />
             <Route path='/playlists' element={<PlaylistList playlists={playlists} />} />
-            <Route path='/playlists/:playlistId' element={<PlaylistDetails handleDeletePlaylist={handleDeletePlaylist} />} />
+            <Route path='/playlists/:playlistId' element={<PlaylistDetails handleDeletePlaylist={handleDeletePlaylist} handleAddSongToPlaylist={handleAddSongToPlaylist} />} />
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
             <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
-            <Route path='/songs' element={<SongList songs={songs} />} />
+            <Route path='/songs' element={<SongList songs={songs} handleAddSongToPlaylist={handleAddSongToPlaylist} playlistId={playlists} />} />
             <Route path='/songs/:songId' element={<SongDetails handleDeleteSong={handleDeleteSong} />} />
             <Route path='/songs/new' element={<SongForm handleAddSong={handleAddSong}/>}/>
           </>
