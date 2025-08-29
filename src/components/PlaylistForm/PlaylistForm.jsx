@@ -38,24 +38,42 @@ const PlaylistForm = (props) => {
     }, [playlistId]);
 
     return (
-        <main>
-            <h1>{playlistId ? 'Edit Playlist' : 'New Playlist'}</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='playlist-name'>Playlist</label>
-                <input
-                    required
-                    type='text'
-                    name='playlist'
-                    id='playlist-input'
-                    value={formData.playlist}
-                    onChange={handleChange}
-                />
-                <label htmlFor='genre-input'>Genre</label>
+        <main className="playlist-form-container">
+    <h2>Create New Playlist</h2>
+    <form onSubmit={handleSubmit}>
+        <div className="playlist-form-group">
+            <label htmlFor='playlist-input' className="playlist-form-label">Playlist Name</label>
+            <input
+              required
+              type='text'
+              name='playlist'
+              id='playlist-input'
+              className="playlist-form-input"
+              value={formData.playlist}
+              onChange={handleChange}
+              placeholder="Enter playlist name"
+            />
+        </div>
+        <div className="playlist-form-group">
+            <label htmlFor='description-input' className="playlist-form-label">Description</label>
+            <input
+              type='text'
+              name='description'
+              id='description-input'
+              className="playlist-form-input"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Enter playlist description"
+            />
+        </div>
+       <div className="playlist-form-group">
+            <label htmlFor='genre-input'>Genre</label>
                 <input
                     required
                     type='text'
                     name='genre'
                     id='genre-input'
+                     className="playlist-form-input"
                     value={formData.genre}
                     onChange={handleChange}
                 />
@@ -64,6 +82,7 @@ const PlaylistForm = (props) => {
                     required
                     name='station'
                     id='station-input'
+                    className="playlist-form-input"
                     value={formData.station}
                     onChange={handleChange}
                 >
@@ -71,9 +90,12 @@ const PlaylistForm = (props) => {
                     <option value='97.9'>97.9</option>
                     <option value='666'>666</option>
                 </select>
-                <button type='submit'>SUBMIT</button>
-            </form>
-        </main>
+
+        </div>
+        <button type='submit' className="song-action-button">Create Playlist</button>
+    </form>
+</main>
+
     );
 };
 
