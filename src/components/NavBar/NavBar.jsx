@@ -14,25 +14,28 @@ const NavBar = () => {
   }
 
   return (
-    <nav className={styles.container}>
-      {user ? (
-        <ul>
-          <li>Welcome, {user.username}</li>
-          <li><Link to='/'>Dashboard</Link></li>
-          <li><Link to='/playlists'>Playlist Catalog</Link></li>
-          <li><Link to='/playlists/new'>Create Playlist</Link></li>
-          <li><Link to='/songs'>Song Library</Link></li>
-          <li><Link to='/songs/new'>New Song</Link></li>
-          <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
-        </ul>
-      ) : (
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/sign-in'>Sign In</Link></li>
-          <li><Link to='/sign-up'>Sign Up</Link></li>
-        </ul>
-      )}
-    </nav>
+   <nav className={styles.container}>
+    <div className={styles.logo}>
+      <Link to='/'>KRUD-FM</Link>
+    </div>
+    {user ? (
+      <ul className={styles.navLinks}>
+        <li className={styles.welcome}>Welcome, {user.username}</li>
+        <li><Link to='/'>Dashboard</Link></li>
+        <li><Link to='/playlists'>Playlists</Link></li>
+        <li><Link to='/playlists/new'>New Playlist</Link></li>
+        <li><Link to='/songs'>Songs</Link></li>
+        <li><Link to='/songs/new'>New Song</Link></li>
+        <li className={styles.signOut}><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
+      </ul>
+    ) : (
+      <ul className={styles.navLinks}>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/sign-in'>Sign In</Link></li>
+        <li><Link to='/sign-up'>Sign Up</Link></li>
+      </ul>
+    )}
+  </nav>
   );
 };
 

@@ -94,7 +94,7 @@ const App = () => {
       <Routes>
         {user ? (
           <>
-            <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+            <Route path='/' element={<Dashboard />} />
             <Route path='/playlists' element={<PlaylistList playlists={playlists} />} />
             <Route path='/playlists/:playlistId' element={<PlaylistDetails handleDeletePlaylist={handleDeletePlaylist} handleAddSongToPlaylist={handleAddSongToPlaylist} />} />
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
@@ -105,6 +105,7 @@ const App = () => {
           </>
         ) : (
           <>
+          <Route path='/' element={<Landing />} />
             <Route path='/sign-up' element={<SignUpForm />} />
             <Route path='/sign-in' element={<SignInForm />} />
           </>
