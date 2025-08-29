@@ -23,17 +23,29 @@ const Dashboard = () => {
     }, [user]);
 
     return (
-        <main>
+       <main className="dj-dashboard-container">
+    <div className="dj-cards-grid">
+        <div className="welcome-header-card">
             <h1>Welcome, {user.username}</h1>
             <p>
-                This is the dashboard page where you can see a list of all the users.
+                Meet the amazing DJs of KRUD-FM Radio Station
             </p>
-            <ul>
-                {users.map((user) => (
-                    <li key={user._id}>{user.username}</li>
-                ))}
-            </ul>
-        </main>
+        </div>
+        {users.map((dj) => (
+            <div key={dj._id} className="dj-card">
+                <div className="dj-card-content">
+                    {dj.logo && (
+                        <img src={dj.logo} alt={`${dj.username} logo`} className="dj-logo" />
+                    )}
+                    <h3 className="dj-name">{dj.username}</h3>
+                    {dj.callSign && <p className="dj-call-sign">"{dj.callSign}"</p>}
+                    {dj.bio && <p className="dj-bio">{dj.bio}</p>}
+                    {dj.broadcastLocation && <p className="dj-location">📍 {dj.broadcastLocation}</p>}
+                </div>
+            </div>
+        ))}
+    </div>
+</main>
     );
 };
 

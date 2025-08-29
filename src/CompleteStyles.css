@@ -660,7 +660,7 @@ button {
 
 /* DJ Card Container */
 .dj-card {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+  background: black !important;
   border-radius: 20px !important;
   padding: 24px !important;
   margin: 0 !important;
@@ -755,7 +755,7 @@ button {
   width: 100% !important;
   position: relative !important;
   z-index: 1 !important;
-  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  /* background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important; */
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -774,7 +774,7 @@ button {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
   max-width: 600px !important;
   width: 100% !important;
-  animation: slideInUp 0.8s ease-out !important;
+  /* animation: slideInUp 0.8s ease-out !important; */
 }
 
 .landing-content h1 {
