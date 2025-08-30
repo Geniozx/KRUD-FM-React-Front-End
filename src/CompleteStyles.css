@@ -35,15 +35,21 @@ Usage:
 /* GLOBAL DARK MODE OVERRIDES */
 /* ======================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap');
 :root {
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #0a0a0a;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 body {
   margin: 0;
-  padding-top: 100px;
+  padding-top: 0px;
   min-width: 320px;
   min-height: 100vh;
   background-color: #0a0a0a;
@@ -96,7 +102,12 @@ button {
   max-width: 1200px !important;
   margin: 0 auto !important;
   padding: 24px !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: black !important;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
   min-height: 100vh !important;
 }
 
@@ -108,15 +119,15 @@ button {
   color: #ffffff !important;
   margin: 0 0 32px 0 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  background: black !important;
+  opacity: 90%;
   background-clip: text !important;
 }
 
 /* Song Card Container */
 .song-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: black !important;
+  opacity: 90%;
   border-radius: 20px !important;
   padding: 24px !important;
   margin: 0 !important;
@@ -179,7 +190,8 @@ button {
   align-items: flex-start !important;
   min-height: 100vh !important;
   padding: 24px !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: black !important;
+  opacity: 90%;
 }
 
 /* Song Details Card */
@@ -242,7 +254,7 @@ button {
   min-height: 100vh !important;
   font-size: 1.5rem !important;
   color: #ffffff !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: black !important;
 }
 
 /* Song Form Container */
@@ -252,7 +264,12 @@ button {
   align-items: flex-start !important;
   min-height: 100vh !important;
   padding: 24px !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: black;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 .song-form-container h2 {
@@ -260,8 +277,7 @@ button {
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 0 84px 0 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+  background: white !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -392,33 +408,35 @@ button {
 
 /* Playlist List Container */
 .playlist-list-container {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
-  gap: 24px !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 24px !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
   min-height: 100vh !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  padding: 24px !important;
 }
 
 .playlist-list-container h1 {
-  grid-column: 1 / -1 !important;
   text-align: center !important;
   font-size: 2.5rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 0 32px 0 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
 }
 
 /* Playlist Card Container */
 .playlist-card {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  background: black !important;
+  opacity: 90%;
   border-radius: 20px !important;
   padding: 24px !important;
   margin: 0 !important;
@@ -473,7 +491,6 @@ button {
   flex-wrap: wrap !important;
 }
 
-/* Playlist Stat */
 .playlist-stat {
   font-size: 0.9rem !important;
   color: rgba(255, 255, 255, 0.7) !important;
@@ -483,45 +500,29 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Playlist Details Container */
-.playlist-details-container {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  min-height: 100vh !important;
-  padding: 24px !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
-}
-
-/* Playlist Details Card */
-.playlist-details-card {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-radius: 20px !important;
-  padding: 32px !important;
-  max-width: 800px !important;
-  width: 100% !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
-  animation: slideInUp 0.6s ease-out !important;
-}
-
-/* Playlist Details Header */
 .playlist-details-header h1 {
   font-size: 2.5rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 0 24px 0 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
+  background: black;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
-/* Playlist Details Info */
-.playlist-details-info {
-  margin: 24px 0 !important;
+.playlist-details-card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  max-width: 800px !important;
+  width: 100% !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+  animation: slideInUp 0.6s ease-out !important;
 }
 
 .playlist-details-info p {
@@ -536,6 +537,25 @@ button {
   font-weight: 700 !important;
 }
 
+/* Playlist Details Container */
+.playlist-details-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  min-height: 100vh !important;
+  padding: 24px !important;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;}
+
+
+/* Playlist Details Info */
+.playlist-details-info {
+  margin: 24px 0 !important;
+}
+
 /* Playlist Form Container */
 .playlist-form-container {
   display: flex !important;
@@ -543,7 +563,11 @@ button {
   align-items: flex-start !important;
   min-height: 100vh !important;
   padding: 24px !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 .playlist-form-container h2 {
@@ -551,8 +575,7 @@ button {
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 0 32px 0 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  background: white;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -621,7 +644,8 @@ button {
 /* DJ Cards Grid */
 .dj-cards-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  align-content: center;
   gap: 24px !important;
   max-width: 1200px !important;
   width: 40% !important;
@@ -661,6 +685,7 @@ button {
 /* DJ Card Container */
 .dj-card {
   background: black !important;
+  opacity: 90%;
   border-radius: 20px !important;
   padding: 24px !important;
   margin: 0 !important;
@@ -755,7 +780,7 @@ button {
   width: 100% !important;
   position: relative !important;
   z-index: 1 !important;
-  /* background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important; */
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;

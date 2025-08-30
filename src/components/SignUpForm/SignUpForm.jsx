@@ -48,7 +48,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <main>
+    <main className="landing-container">
+    <div className="landing-content">
       <h1>Sign Up</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
@@ -132,6 +133,7 @@ const SignUpForm = () => {
           <button onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
+      </div>
     </main>
   );
 };

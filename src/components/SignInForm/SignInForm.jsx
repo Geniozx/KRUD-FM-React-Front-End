@@ -33,7 +33,8 @@ const SignInForm = () => {
   };
 
   return (
-    <main>
+    <main className="landing-container">
+    <div className="landing-content">
       <h1>Sign In</h1>
       <p>{message}</p>
       <form autoComplete='off' onSubmit={handleSubmit}>
@@ -66,6 +67,7 @@ const SignInForm = () => {
           <button onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
+      </div>
     </main>
   );
 };
