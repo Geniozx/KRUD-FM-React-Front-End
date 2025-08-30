@@ -40,6 +40,11 @@ Usage:
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #0a0a0a;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 body {
@@ -98,7 +103,11 @@ button {
   margin: 0 auto !important;
   padding: 24px !important;
   background: black !important;
-  opacity: 90%;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
   min-height: 100vh !important;
 }
 
@@ -245,7 +254,7 @@ button {
   min-height: 100vh !important;
   font-size: 1.5rem !important;
   color: #ffffff !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: black !important;
 }
 
 /* Song Form Container */
@@ -255,7 +264,12 @@ button {
   align-items: flex-start !important;
   min-height: 100vh !important;
   padding: 24px !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: black;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 .song-form-container h2 {
@@ -263,8 +277,7 @@ button {
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 0 84px 0 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+  background: white !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -493,10 +506,12 @@ button {
   color: #ffffff !important;
   margin: 0 0 24px 0 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
+  background: black;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 .playlist-details-card {
@@ -548,7 +563,11 @@ button {
   align-items: flex-start !important;
   min-height: 100vh !important;
   padding: 24px !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 .playlist-form-container h2 {
@@ -556,8 +575,7 @@ button {
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 0 32px 0 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  background: white;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
