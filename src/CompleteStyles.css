@@ -35,6 +35,7 @@ Usage:
 /* GLOBAL DARK MODE OVERRIDES */
 /* ======================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap');
 :root {
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
@@ -43,7 +44,7 @@ Usage:
 
 body {
   margin: 0;
-  padding-top: 100px;
+  padding-top: 0px;
   min-width: 320px;
   min-height: 100vh;
   background-color: #0a0a0a;
@@ -392,14 +393,20 @@ button {
 
 /* Playlist List Container */
 .playlist-list-container {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
-  gap: 24px !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding: 24px !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
   min-height: 100vh !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1 !important;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  padding: 24px !important;
 }
 
 .playlist-list-container h1 {
@@ -620,8 +627,9 @@ button {
 
 /* DJ Cards Grid */
 .dj-cards-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  align-content: center;
   gap: 24px !important;
   max-width: 1200px !important;
   width: 40% !important;
@@ -661,6 +669,7 @@ button {
 /* DJ Card Container */
 .dj-card {
   background: black !important;
+  opacity: 90%;
   border-radius: 20px !important;
   padding: 24px !important;
   margin: 0 !important;
