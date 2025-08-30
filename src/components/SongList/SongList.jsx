@@ -7,15 +7,15 @@ const SongList = (props) => {
             {props.songs.map((song) => (
                 <div key={song._id} className="song-card">
                     <div className="song-card-content">
-                    <Link to={`/songs/${song._id}`}>
+                        <Link to={`/songs/${song._id}`}>
                             <h3 className="song-title">{song.track}</h3>
                             <p className="song-artist">{song.artist}</p>
                             <p className="song-album">{song.album}</p>
                         </Link>
-
                         <button onClick={() => props.handleAddSongToPlaylist(props.playlistId, song._id)}>
                             Add
-                        </button></div>
+                        </button>
+                    </div>
                 </div>
             ))}
         </main>

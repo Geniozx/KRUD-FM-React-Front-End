@@ -42,43 +42,48 @@ const PlaylistDetails = (props) => {
   if (!playlist) return <main>Loading........</main>;
   return (
     <main className="playlist-details-container">
-    <section className="playlist-details-card">
+      <section className="playlist-details-card">
         <header className="playlist-details-header">
-            <h1>{playlist.playlist}</h1>
+          <h1>{playlist.playlist}</h1>
         </header>
         <div className="playlist-details-info">
-            {playlist.description && <p><strong>Description:</strong> {playlist.description}</p>}
-            {playlist.songs && playlist.songs.length > 0 && (
-                <div>
-                    <h3>Songs in this playlist:</h3>
-                    {playlist.songs.map((song) => (
-                        <div key={song._id} className="song-card">
-                            <div className="song-card-content">
-                                <h3 className="song-title">{song.track}</h3>
-                                {song.artist && <p className="song-artist">{song.artist}</p>}
-                                {song.album && <p className="song-album">{song.album}</p>}
-                            </div>
-                        </div>
-                    ))}
+          {playlist.description && <p><strong>Description:</strong> {playlist.description}</p>}
+          {playlist.songs && playlist.songs.length > 0 && (
+            <div>
+              <h3>Songs in this playlist:</h3>
+              {playlist.songs.map((song) => (
+                <div key={song._id} className="song-card">
+                  <div className="song-card-content">
+                    <h3 className="song-title">{song.track}</h3>
+                    <p className="song-artist">{song.artist}</p>
+                    <p className="song-album">{song.album}</p>
+                    <div>
+                      <button onClick={() => {
+                        console.log('Removing song:', song._id, 'from playlist:', playlistId);
+                        props.handleRemoveSongFromPlaylist(playlistId, song._id)
+                      }}>Remove Song From Playlist</button>
+                    </div>
+                  </div>
                 </div>
-            )}
+              ))}
+            </div>
+          )}
         </div>
         {playlist.author._id === user._id && (
-            <div>
-                <button
-                    className="song-action-button"
-                    onClick={() => props.handleDeletePlaylist(playlistId)}
-                >
-                    Delete Playlist
-                </button>
-            </div>
+          <div>
+            <button
+              className="song-action-button"
+              onClick={() => props.handleDeletePlaylist(playlistId)}>
+              Delete Playlist
+            </button>
+          </div>
         )}
         <section>
           <h3>Add a Song</h3>
           <SongList songs={songs} handleAddSongToPlaylist={props.handleAddSongToPlaylist} playlistId={playlistId} />
         </section>
-    </section>
-</main>
+      </section>
+    </main>
   )
 };
 
@@ -88,4 +93,3 @@ export default PlaylistDetails;
 
 
 
-          
