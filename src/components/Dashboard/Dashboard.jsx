@@ -23,29 +23,64 @@ const Dashboard = () => {
     }, [user]);
 
     return (
-       <main className="dj-dashboard-container">
-    <div className="dj-cards-grid">
-        <div className="welcome-header-card">
-            <h1>Welcome, {user.username}</h1>
-            <p>
-                Meet the amazing DJs of KRUD-FM Radio Station
-            </p>
-        </div>
-        {users.map((dj) => (
-            <div key={dj._id} className="dj-card">
-                <div className="dj-card-content">
-                    {dj.logo && (
-                        <img src={dj.logo} alt={`${dj.username} logo`} className="dj-logo" />
-                    )}
-                    <h3 className="dj-name">{dj.username}</h3>
-                    {dj.callSign && <p className="dj-call-sign">"{dj.callSign}"</p>}
-                    {dj.bio && <p className="dj-bio">{dj.bio}</p>}
-                    {dj.broadcastLocation && <p className="dj-location">📍 {dj.broadcastLocation}</p>}
+        <main className="dj-dashboard-container">
+            <div className="dj-cards-grid">
+                <div className="welcome-header-card">
+                    <h1>Welcome, {user.username}</h1>
+                    <p>
+                        Meet the amazing DJs of KRUD-FM Radio Station
+                    </p>
                 </div>
+                {users.map((dj) => (
+                    <div key={dj._id} className="dj-card">
+                        <div className="dj-card-content">
+                            {dj.logo && (
+                                <img src={dj.logo} alt={`${dj.username} logo`} className="dj-logo" />
+                            )}
+                            <h3 className="dj-name">{dj.username}</h3>
+                            {dj.callSign && <p className="dj-call-sign">"{dj.callSign}"</p>}
+                            {dj.bio && <p className="dj-bio">{dj.bio}</p>}
+                            {dj.broadcastLocation && <p className="dj-location">📍 {dj.broadcastLocation}</p>}
+
+                        </div>
+
+                        <div className="dj-image-container">
+                            {dj.logo ? (
+                                <img
+                                    src={dj.logo}
+                                    alt={`${dj.username} profile`}
+                                    className="dj-logo"
+                                    onError={(e) => {
+                                        console.log('Image failed to load:', dj.logo);
+                                        e.target.style.display = 'none';
+                                    }}
+                                />
+                            ) : (
+                                <div className="dj-placeholder">
+                                    <span className="dj-initials">
+                                        {dj.username.split(' ').map(name => name[0]).join('').toUpperCase()}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                        {/* added more here below this, also */}
+                        <div className="dj-info">
+                            <h3 className="dj-name">{dj.username}</h3>
+
+                            {/* adjust field names more below this one to ensure this works*/}
+                            <p className="dj-callSign">
+                                <span className="call-sign-label">Call Sign:</span>
+                            </p>
+                            <p className="dj-bio">
+                                <span className="bio-label">Bio:</span>
+                                {(dj.bio || dj.biography || dj.description)}
+                            </p>   
+                        </div>
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>
-</main>
+
+        </main>
     );
 };
 
