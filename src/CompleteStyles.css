@@ -90,6 +90,31 @@ button {
   }
 }
 
+/* ============ Logo info ============ */
+
+.krud-logo {
+  height: 80px;
+  width: auto;
+  z-index: 1000;
+  user-select: none;
+}
+
+/* Before login (Landing, Dashboard): center top */
+.krud-logo--guest {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* After login: small, top left */
+.krud-logo--auth {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  height: 48px; /* smaller version */
+}
+
 /* ======================================== */
 /* SONG COMPONENTS STYLES */
 /* ======================================== */
@@ -408,28 +433,31 @@ button {
 
 /* Playlist List Container */
 .playlist-list-container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  position: relative !important;
-  z-index: 1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: 24px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 24px !important;
+  background: black !important;
   background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
-  padding: 24px !important;
+  min-height: 100vh !important;
 }
 
 .playlist-list-container h1 {
+  grid-column: 1 / -1 !important;
   text-align: center !important;
   font-size: 2.5rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  margin: 0 0 32px 0 !important;
+  margin: 100 0 32px 0 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  background: black !important;
+  opacity: 90%;
   background-clip: text !important;
 }
 
@@ -457,7 +485,6 @@ button {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Playlist Card Content */
 .playlist-card-content {
   display: flex;
   flex-direction: column;
@@ -558,26 +585,31 @@ button {
 
 /* Playlist Form Container */
 .playlist-form-container {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  min-height: 100vh !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: 24px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
   padding: 24px !important;
+  background: black !important;
   background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
+  min-height: 100vh !important;
 }
 
 .playlist-form-container h2 {
-  font-size: 2rem !important;
+  grid-column: 1 / -1 !important;
+  text-align: center !important;
+  font-size: 2.5rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
   margin: 0 0 32px 0 !important;
-  background: white;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  background: black !important;
+  opacity: 90%;
   background-clip: text !important;
 }
 
@@ -790,16 +822,39 @@ button {
 
 /* Landing Content Card */
 .landing-content {
+  display: flex;
+  flex-direction: column;
   background: rgba(0, 0, 0, 0.8) !important;
   border-radius: 20px !important;
   padding: 40px !important;
-  text-align: center !important;
+  text-align: justify !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
   max-width: 600px !important;
-  width: 100% !important;
+  width: 50% !important;
   /* animation: slideInUp 0.8s ease-out !important; */
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-row label {
+  flex: 1;
+  max-width: 150px; /* keeps all labels aligned */
+}
+
+.form-row input {
+  flex: 2;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .landing-content h1 {
@@ -807,8 +862,7 @@ button {
   font-weight: 800;
   color: #ffffff;
   margin: 0 0 20px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -825,13 +879,15 @@ button {
 /* Landing Buttons */
 .landing-buttons {
   display: flex;
+  padding: 20px;
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .landing-button {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+  background: rgb(18, 18, 157) !important;
+  opacity: 80%;
   color: white !important;
   border: none !important;
   border-radius: 12px !important;
@@ -852,7 +908,8 @@ button {
 }
 
 .landing-button.secondary {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%) !important;
+  background: rgb(133, 6, 6) !important;
+  opacity: 80%;
   box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
 }
 
@@ -1008,7 +1065,7 @@ Copy the following styles to that file:
 /* Responsive Design for Playlist Components */
 @media (max-width: 768px) {
   .playlist-list-container {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 3fr !important;
     gap: 16px !important;
     padding: 16px !important;
   }

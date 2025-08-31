@@ -53,7 +53,18 @@ const SignUpForm = () => {
       <h1>Sign Up</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-row">
+          <label htmlFor='logo'>Logo:</label>
+          <input
+            type='logo'
+            id='logo'
+            value={logo}
+            name='logo'
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-row">
           <label htmlFor='username'>Username:</label>
           <input
             type='text'
@@ -64,7 +75,8 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
+
+        <div className="form-row">
           <label htmlFor='password'>Password:</label>
           <input
             type='password'
@@ -75,7 +87,8 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
+
+        <div className="form-row">
           <label htmlFor='confirm'>Confirm Password:</label>
           <input
             type='password'
@@ -86,18 +99,8 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor='bio'>Bio:</label>
-          <textarea
-            type='bio'
-            id='bio'
-            value={bio}
-            name='bio'
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
+
+        <div className="form-row">
           <label htmlFor='callSign'>Call Sign:</label>
           <input
             type='callSign'
@@ -108,7 +111,8 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
+
+        <div className="form-row">
           <label htmlFor='broadcastLocation'>Broadcast Location:</label>
           <input
             type='broadcastLocation'
@@ -118,17 +122,20 @@ const SignUpForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label htmlFor='logo'>Logo:</label>
-          <input
-            type='logo'
-            id='logo'
-            value={logo}
-            name='logo'
+        
+        <div className="form-row">
+          <label htmlFor='bio'>Bio:</label>
+          <textarea
+            type='bio'
+            id='bio'
+            value={bio}
+            name='bio'
             onChange={handleChange}
+            required
           />
         </div>
-        <div>
+        
+        <div className="landing-buttons">
           <button disabled={isFormInvalid()}>Sign Up</button>
           <button onClick={() => navigate('/')}>Cancel</button>
         </div>
