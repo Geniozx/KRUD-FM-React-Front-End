@@ -40,7 +40,7 @@ const PlaylistForm = (props) => {
     return (
         <main className="playlist-form-container">
     <h2>Create New Playlist</h2>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
         <div className="playlist-form-group">
             <label htmlFor='playlist-input' className="playlist-form-label">Playlist Name</label>
             <input

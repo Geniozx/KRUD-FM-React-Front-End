@@ -142,7 +142,7 @@ button {
   font-size: 2.5rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  margin: 0 0 32px 0 !important;
+  margin: 100px 0 32px 0 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
   background: black !important;
   opacity: 90%;
@@ -285,8 +285,9 @@ button {
 /* Song Form Container */
 .song-form-container {
   display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
+  flex-direction: column;
+  justify-content: flex-start !important;
+  align-items: center !important;
   min-height: 100vh !important;
   padding: 24px !important;
   background: black;
@@ -301,7 +302,7 @@ button {
   font-size: 2rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  margin: 0 0 84px 0 !important;
+  margin: 100px 0 84px 0 !important;
   background: white !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -454,7 +455,7 @@ button {
   font-size: 2.5rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  margin: 100 0 32px 0 !important;
+  margin: 100px 0 32px 0 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
   background: black !important;
   opacity: 90%;
@@ -585,10 +586,11 @@ button {
 
 /* Playlist Form Container */
 .playlist-form-container {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   gap: 24px !important;
-  max-width: 1200px !important;
   margin: 0 auto !important;
   padding: 24px !important;
   background: black !important;
@@ -606,13 +608,17 @@ button {
   font-size: 2.5rem !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  margin: 0 0 32px 0 !important;
+  margin: 100px 0 32px 0 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
   background: black !important;
-  opacity: 90%;
   background-clip: text !important;
 }
 
+/* .form-container {
+  background: black;
+  opacity: 90%;
+  width: 500px;
+} */
 /* Playlist Form Group */
 .playlist-form-group {
   margin-bottom: 24px !important;
