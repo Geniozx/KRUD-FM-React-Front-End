@@ -1,10 +1,9 @@
-// src/components/Dashboard/Dashboard.jsx
-
 import { useEffect, useContext, useState } from 'react';
 
 import { UserContext } from '../../contexts/UserContext';
 
 import * as userService from '../../services/userService';
+
 
 const Dashboard = () => {
     const { user } = useContext(UserContext);
@@ -24,7 +23,7 @@ const Dashboard = () => {
 
     return (
        <main className="dj-dashboard-container">
-    <div className="dj-cards-grid">
+        <div className="dj-cards-grid">
         <div className="welcome-header-card">
             <h1>Welcome, {user.username}</h1>
             <p>
@@ -34,11 +33,9 @@ const Dashboard = () => {
         {users.map((dj) => (
             <div key={dj._id} className="dj-card">
                 <div className="dj-card-content">
-                    {dj.logo && (
-                        <img src={dj.logo} alt={`${dj.username} logo`} className="dj-logo" />
-                    )}
-                    <h3 className="dj-name">{dj.username}</h3>
-                    {dj.callSign && <p className="dj-call-sign">"{dj.callSign}"</p>}
+                    {dj.logo && (<img src={dj.logo} alt={`${dj.username} logo`} className="dj-logo" />)}
+                    {dj.username && <h3 className="dj-name">{dj.username}</h3> }
+                    {dj.callSign && <p className="dj-call-sign">"{dj.callSign}"</p> }
                     {dj.bio && <p className="dj-bio">{dj.bio}</p>}
                     {dj.broadcastLocation && <p className="dj-location">📍 {dj.broadcastLocation}</p>}
                 </div>

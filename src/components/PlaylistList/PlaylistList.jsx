@@ -3,9 +3,12 @@ import { Link } from 'react-router';
 
 const PlaylistList = (props) => {
     return (
-      <main className="playlist-list-container">
+    <main className="playlist-list-container">
     <h1>Playlist Catalog</h1>
-    {props.playlists.map((playlist) => (
+    {props.playlists
+    .slice()
+    .sort((a, b) => a.playlist.localeCompare(b.playlist))
+    .map((playlist) => (
         <div key={playlist._id} className="playlist-card">
             <div className="playlist-card-content">
                 <Link to={`/playlists/${playlist._id}`}>
