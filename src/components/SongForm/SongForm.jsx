@@ -21,7 +21,7 @@ const SongForm = (props) => {
   return (
 <main className="song-form-container">
     <h2>Add New Song</h2>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
         <div className="song-form-group">
             <label htmlFor='track-input' className="song-form-label">Track Title</label>
             <input

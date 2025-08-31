@@ -33,11 +33,12 @@ const SignInForm = () => {
   };
 
   return (
-    <main>
+    <main className="landing-container">
+    <div className="landing-content">
       <h1>Sign In</h1>
       <p>{message}</p>
       <form autoComplete='off' onSubmit={handleSubmit}>
-        <div>
+        <div className="form-row">
           <label htmlFor='username'>Username:</label>
           <input
             type='text'
@@ -49,7 +50,7 @@ const SignInForm = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-row">
           <label htmlFor='password'>Password:</label>
           <input
             type='password'
@@ -61,11 +62,12 @@ const SignInForm = () => {
             required
           />
         </div>
-        <div>
+        <div className="landing-buttons">
           <button>Sign In</button>
           <button onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
+      </div>
     </main>
   );
 };

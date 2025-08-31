@@ -3,6 +3,7 @@ import styles from './NavBar.module.css';
 import { useContext } from 'react';
 import { Link } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
+import Logo from '../Logo/Logo';
 
 const NavBar = () => {
 
@@ -15,9 +16,9 @@ const NavBar = () => {
 
   return (
    <nav className={styles.container}>
-    <div className={styles.logo}>
-      <Link to='/'>KRUD-FM</Link>
-    </div>
+     <div className={styles.logo}>
+        <Logo inNav /> {/* navbar insert */}
+      </div>
     {user ? (
       <ul className={styles.navLinks}>
         <li className={styles.welcome}>Welcome, {user.username}</li>

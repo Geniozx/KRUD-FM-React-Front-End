@@ -6,10 +6,10 @@ const Landing = () => {
         <main className="landing-container">
             <div className="landing-content">
                 <h1> Welcome to KRUD-FM</h1>
-                <p>Your ultimate radio station experience! Join our community of DJs to create amazing playlists and connect with fellow artists.</p>
+                <p>Your ultimate radio station playlist prep!</p>
                 <div className="landing-buttons">
                     <Link to="/sign-up" className="landing-button">
-                        Get Started
+                        Create Profile
                     </Link>
                     <Link to="/sign-in" className="landing-button secondary">
                         Sign In
