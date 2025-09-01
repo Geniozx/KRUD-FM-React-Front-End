@@ -18,7 +18,6 @@ import { UserContext } from './contexts/UserContext';
 import PlaylistDetails from './components/PlaylistDetails/PlaylistDetails';
 
 import './SongComponents.css';
-// Added the above import
 
 
 const App = () => {
@@ -85,12 +84,15 @@ const App = () => {
   const handleAddSongToPlaylist = async (playlistId, songId) => {
     const addedSong = await playlistService.postSongToPlaylist(playlistId, songId);
     setPlaylistSongs([addedSong, ...playlistSongs])
+    navigate(`/playlists/${playlistId}`);
+    // const updatedPlaylist = await playlistService.index();
+    // return updatedPlaylist;
   };
 
   const handleRemoveSongFromPlaylist = async (playlistId, songId) => {
-    const removedSong = await playlistService.removeSongFromPlaylist(playlistId, songId);
-    setPlaylistSongs(playlistSongs.filter((song) => song._id !== removedSong._id))
-    navigate(`/playlists/${playlistId}`)
+    await playlistService.removeSongFromPlaylist(playlistId, songId);
+    const updatedPlaylist = await playlistService.show(playlistId);
+    return updatedPlaylist;
   }
 
 
@@ -111,10 +113,10 @@ const App = () => {
                   songs={songs}
                   handleAddSongToPlaylist={handleAddSongToPlaylist}
                   playlists={playlists.filter(
-                    playlist => 
-                    playlist && 
-                    playlist.author &&
-                    playlist.author._id === user._id)} />} />
+                    playlist =>
+                      playlist &&
+                      playlist.author &&
+                      playlist.author._id === user._id)} />} />
             <Route path='/songs/:songId' element={<SongDetails handleDeleteSong={handleDeleteSong} />} />
             <Route path='/songs/new' element={<SongForm handleAddSong={handleAddSong} />} />
           </>

@@ -22,8 +22,6 @@ const SongList = (props) => {
               <p className="song-artist">{song.artist}</p>
               <p className="song-album">{song.album}</p>
             </Link>
-
-            {/* Dropdown to choose a playlist */}
             
             <select
               value={selectedPlaylist[song._id] || ''}
@@ -36,14 +34,11 @@ const SongList = (props) => {
                 </option>
               ))}
             </select>
-
-            {/* Button to add the song to the selected playlist */}
             <button
               disabled={!selectedPlaylist[song._id]}
               onClick={() =>
                 props.handleAddSongToPlaylist(selectedPlaylist[song._id], song._id)
-              }
-            >
+              }>
               Add
             </button>
           </div>
