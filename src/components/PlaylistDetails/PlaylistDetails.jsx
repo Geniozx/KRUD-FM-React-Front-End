@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router';
+import { useParams, Link, useNavigate } from 'react-router';
 import { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import SongList from '../SongList/SongList';
@@ -8,12 +8,11 @@ import * as songService from '../../services/songService';
 
 
 const PlaylistDetails = (props) => {
+  const navigate = useNavigate();
   const { playlistId } = useParams();
-  // const { songId } = useParams();
   const { user } = useContext(UserContext);
   const [playlist, setPlaylist] = useState(null);
-  // const [songs, setSongs] = useState([])
-  
+
 
   useEffect(() => {
 
@@ -25,20 +24,10 @@ const PlaylistDetails = (props) => {
 
   }, [playlistId]);
 
-  // console.log('playlistId', playlistId);
-  // console.log('user:', playlist)
-
-  // useEffect(() => {
-  //   const fetchSongs = async () => {
-  //     const songData = await songService.index(songId);
-  //     setSongs(songData)
-  //     // const res = await fetch(`${BASE_URL}songs`);
-  //     // const data = await res.json();
-  //     // console.log('Fetched Songs:', songData)
-  //   };
-  //   fetchSongs();
-  // }, [songId]);
-
+  const handleRemoveSong = async (playlistId, songId) => {
+    const updatedPlaylist = await props.handleRemoveSongFromPlaylist(playlistId, songId);
+    setPlaylist(updatedPlaylist); // refreshes the UI
+  };
 
   if (!playlist) return <main>Loading........</main>;
   return (
@@ -59,10 +48,9 @@ const PlaylistDetails = (props) => {
                     <p className="song-artist">{song.artist}</p>
                     <p className="song-album">{song.album}</p>
                     <div>
-                      <button onClick={() => {
-                        console.log('Removing song:', song._id, 'from playlist:', playlistId);
-                        props.handleRemoveSongFromPlaylist(playlistId, song._id)
-                      }}>Remove Song From Playlist</button>
+                      <button onClick={() => handleRemoveSong(playlistId, song._id)}>
+                        Remove Song From Playlist
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -77,12 +65,13 @@ const PlaylistDetails = (props) => {
               onClick={() => props.handleDeletePlaylist(playlistId)}>
               Delete Playlist
             </button>
+            <button
+              className="song-action-button"
+              onClick={() => navigate('/songs')}>
+              Add a Song
+            </button>
           </div>
         )}
-        <section>
-          <Link to={'/songs'}><h3>Add a Song</h3></Link>
-          {/* <SongList songs={songs} handleAddSongToPlaylist={props.handleAddSongToPlaylist} playlistId={playlistId} /> */}
-        </section>
       </section>
     </main>
   )

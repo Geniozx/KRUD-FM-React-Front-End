@@ -67,7 +67,6 @@ const deletePlaylist = async (playlistId) => {
 };
 
 const postSongToPlaylist = async (playlistId, songId) => {
-    // console.log('songId', songId, 'playlistId', playlistId);
     try {
         const res = await fetch(`${BASE_URL}/api/${playlistId}/${songId}`, {
             method: 'POST',
@@ -75,12 +74,8 @@ const postSongToPlaylist = async (playlistId, songId) => {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json'
             },
-            // body: JSON.stringify({ songId }),
         });
-        console.log('songId', songId, 'playlistId', playlistId);
         return res.json();
-        // const updated = await res.json();
-        // onSongAdded(updated.playlist);
     } catch (error) {
         console.log(error);
     };
