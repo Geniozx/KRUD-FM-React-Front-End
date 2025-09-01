@@ -9,10 +9,11 @@ import * as songService from '../../services/songService';
 
 const PlaylistDetails = (props) => {
   const { playlistId } = useParams();
-  const { songId } = useParams();
+  // const { songId } = useParams();
   const { user } = useContext(UserContext);
   const [playlist, setPlaylist] = useState(null);
-  const [songs, setSongs] = useState([])
+  // const [songs, setSongs] = useState([])
+  
 
   useEffect(() => {
 
@@ -27,16 +28,16 @@ const PlaylistDetails = (props) => {
   // console.log('playlistId', playlistId);
   // console.log('user:', playlist)
 
-  useEffect(() => {
-    const fetchSongs = async () => {
-      const songData = await songService.index(songId);
-      setSongs(songData)
-      // const res = await fetch(`${BASE_URL}songs`);
-      // const data = await res.json();
-      console.log('Fetched Songs:', songData)
-    };
-    fetchSongs();
-  }, [songId]);
+  // useEffect(() => {
+  //   const fetchSongs = async () => {
+  //     const songData = await songService.index(songId);
+  //     setSongs(songData)
+  //     // const res = await fetch(`${BASE_URL}songs`);
+  //     // const data = await res.json();
+  //     // console.log('Fetched Songs:', songData)
+  //   };
+  //   fetchSongs();
+  // }, [songId]);
 
 
   if (!playlist) return <main>Loading........</main>;
@@ -80,7 +81,7 @@ const PlaylistDetails = (props) => {
         )}
         <section>
           <h3>Add a Song</h3>
-          <SongList songs={songs} handleAddSongToPlaylist={props.handleAddSongToPlaylist} playlistId={playlistId} />
+          {/* <SongList songs={songs} handleAddSongToPlaylist={props.handleAddSongToPlaylist} playlistId={playlistId} /> */}
         </section>
       </section>
     </main>

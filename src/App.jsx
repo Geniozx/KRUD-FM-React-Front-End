@@ -85,8 +85,6 @@ const App = () => {
   const handleAddSongToPlaylist = async (playlistId, songId) => {
     const addedSong = await playlistService.postSongToPlaylist(playlistId, songId);
     setPlaylistSongs([addedSong, ...playlistSongs])
-    ('/playlists')
-    //  ^^  can be removed if we dont it here or for delete below
   };
 
   const handleRemoveSongFromPlaylist = async(playlistId, songId) => {
@@ -107,7 +105,7 @@ const App = () => {
             <Route path='/playlists/:playlistId' element={<PlaylistDetails handleDeletePlaylist={handleDeletePlaylist} handleAddSongToPlaylist={handleAddSongToPlaylist} handleRemoveSongFromPlaylist={handleRemoveSongFromPlaylist} />} />
             <Route path='/playlists/new' element={<PlaylistForm handleAddPlaylist={handleAddPlaylist} />} />
             <Route path='/playlists/:playlistId/edit' element={<PlaylistForm handleUpdatePlaylist={handleUpdatePlaylist} />} />
-            <Route path='/songs' element={<SongList songs={songs} handleAddSongToPlaylist={handleAddSongToPlaylist} playlistId={playlists} />} />
+            <Route path='/songs' element={<SongList songs={songs} handleAddSongToPlaylist={handleAddSongToPlaylist} playlists={playlists.filter(playlist => playlist.author._id === user._id)} />} />
             <Route path='/songs/:songId' element={<SongDetails handleDeleteSong={handleDeleteSong} />} />
             <Route path='/songs/new' element={<SongForm handleAddSong={handleAddSong} />} />
           </>
