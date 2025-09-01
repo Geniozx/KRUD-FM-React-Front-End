@@ -92,7 +92,7 @@ const PlaylistForm = (props) => {
                 </select>
 
         </div>
-        <button type='submit' className="song-action-button">Create Playlist</button>
+       <br></br><center><button type='submit' className="song-action-button">Create Playlist</button></center>
     </form>
 </main>
 

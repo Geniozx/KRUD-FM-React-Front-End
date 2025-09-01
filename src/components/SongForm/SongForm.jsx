@@ -74,7 +74,7 @@ const SongForm = (props) => {
               placeholder="Enter album art URL"
             />
         </div>
-        <button type='submit' className="song-action-button">Add Song</button>
+         <br></br><center><button type='submit' className="song-action-button">Add Song</button></center>
     </form>
 </main>
   )
