@@ -63,4 +63,44 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Dark mode is now the default */
+/* below is newly added by Morgan for DJ dashboard details */
+.dj-image-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+}
+
+.dj-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dj-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dj-initials {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.dj-info {
+    text-align: center;
+}
+
+.call-sign-label,
+.bio-label,
+.location-label {
+    font-weight: 600;
+    color: #666;
+}

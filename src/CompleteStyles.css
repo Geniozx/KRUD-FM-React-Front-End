@@ -311,7 +311,14 @@ button {
 
 /* Song Form Group */
 .song-form-group {
-  margin-bottom: 24px !important;
+  margin-bottom: 0px !important;
+  padding-left: 160px;
+  padding-right: 160px;
+  padding-bottom: 20px;
+  padding-top:  20px;
+  background-color: #000000;
+  box-shadow: #000000;
+  opacity: 95%;
 }
 
 /* Song Form Label */
@@ -622,6 +629,14 @@ button {
 /* Playlist Form Group */
 .playlist-form-group {
   margin-bottom: 24px !important;
+    margin-bottom: 0px !important;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 20px;
+  padding-top:  20px;
+  background-color: #000000;
+  box-shadow: #000000;
+  opacity: 95%;
 }
 
 /* Playlist Form Label */
