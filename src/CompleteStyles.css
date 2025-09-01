@@ -92,6 +92,21 @@ button {
 
 /* ============ Logo info ============ */
 
+.landing-header {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.logo {
+  width: 80%;
+  height: auto;
+  filter: drop-shadow(0 0 40px #000)    /* black edge */
+          drop-shadow(0 0 40px black)
+          drop-shadow(0 0 40px black); /* magenta glow */
+  /* background-color:brown;
+  opacity: 50%; */
+}
+
 .krud-logo {
   height: 80px;
   width: auto;
@@ -99,20 +114,12 @@ button {
   user-select: none;
 }
 
-/* Before login (Landing, Dashboard): center top */
-.krud-logo--guest {
-  position: fixed;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /* After login: small, top left */
 .krud-logo--auth {
   position: fixed;
   top: 16px;
   left: 16px;
-  height: 48px; /* smaller version */
+  height: 48px;
 }
 
 /* ======================================== */
@@ -835,7 +842,7 @@ button {
   z-index: 1 !important;
   background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
   background-size: cover !important;
-  background-position: center !important;
+  background-position: top center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   padding: 24px !important;

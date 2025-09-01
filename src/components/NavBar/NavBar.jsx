@@ -16,12 +16,13 @@ const NavBar = () => {
 
   return (
    <nav className={styles.container}>
-     <div className={styles.logo}>
-        <Logo inNav /> {/* navbar insert */}
-      </div>
+     
     {user ? (
       <ul className={styles.navLinks}>
-        <li className={styles.welcome}>Welcome, {user.username}</li>
+       <div className={styles.logo}>
+        <Logo inNav />
+        </div>
+
         <li><Link to='/'>Dashboard</Link></li>
         <li><Link to='/playlists'>Playlists</Link></li>
         <li><Link to='/playlists/new'>New Playlist</Link></li>
@@ -31,6 +32,7 @@ const NavBar = () => {
       </ul>
     ) : (
       <ul className={styles.navLinks}>
+        
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/sign-in'>Sign In</Link></li>
         <li><Link to='/sign-up'>Sign Up</Link></li>
