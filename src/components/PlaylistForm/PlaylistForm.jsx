@@ -10,7 +10,7 @@ const formInit = {
 
 const PlaylistForm = (props) => {
     const { playlistId } = useParams();
-    console.log(playlistId);
+    // console.log(playlistId);
     const [formData, setFormData] = useState(formInit);
 
 
@@ -39,62 +39,62 @@ const PlaylistForm = (props) => {
 
     return (
         <main className="playlist-form-container">
-    <h2>Create New Playlist</h2>
-    <form onSubmit={handleSubmit} className="form-container">
-        <div className="playlist-form-group">
-            <label htmlFor='playlist-input' className="playlist-form-label">Playlist Name</label>
-            <input
-              required
-              type='text'
-              name='playlist'
-              id='playlist-input'
-              className="playlist-form-input"
-              value={formData.playlist}
-              onChange={handleChange}
-              placeholder="Enter playlist name"
-            />
-        </div>
-        <div className="playlist-form-group">
-            <label htmlFor='description-input' className="playlist-form-label">Description</label>
-            <input
-              type='text'
-              name='description'
-              id='description-input'
-              className="playlist-form-input"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Enter playlist description"
-            />
-        </div>
-       <div className="playlist-form-group">
-            <label htmlFor='genre-input'>Genre</label>
-                <input
-                    required
-                    type='text'
-                    name='genre'
-                    id='genre-input'
-                     className="playlist-form-input"
-                    value={formData.genre}
-                    onChange={handleChange}
-                />
-                <label htmlFor='station-input'>Station</label>
-                <select
-                    required
-                    name='station'
-                    id='station-input'
-                    className="playlist-form-input"
-                    value={formData.station}
-                    onChange={handleChange}
-                >
-                    <option value='953'>953</option>
-                    <option value='97.9'>97.9</option>
-                    <option value='666'>666</option>
-                </select>
+            <h2>Create New Playlist</h2>
+            <form onSubmit={handleSubmit} className="form-container">
+                <div className="playlist-form-group">
+                    <label htmlFor='playlist-input' className="playlist-form-label">Playlist Name</label>
+                    <input
+                        required
+                        type='text'
+                        name='playlist'
+                        id='playlist-input'
+                        className="playlist-form-input"
+                        value={formData.playlist}
+                        onChange={handleChange}
+                        placeholder="Enter playlist name"
+                    />
+                </div>
+                <div className="playlist-form-group">
+                    <label htmlFor='description-input' className="playlist-form-label">Description</label>
+                    <input
+                        type='text'
+                        name='description'
+                        id='description-input'
+                        className="playlist-form-input"
+                        value={formData.description}
+                        onChange={handleChange}
+                        placeholder="Enter playlist description"
+                    />
+                </div>
+                <div className="playlist-form-group">
+                    <label htmlFor='genre-input'>Genre</label>
+                    <input
+                        required
+                        type='text'
+                        name='genre'
+                        id='genre-input'
+                        className="playlist-form-input"
+                        value={formData.genre}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor='station-input'>Station</label>
+                    <select
+                        required
+                        name='station'
+                        id='station-input'
+                        className="playlist-form-input"
+                        value={formData.station}
+                        onChange={handleChange}
+                    >
+                        <option value='953'>953</option>
+                        <option value='97.9'>97.9</option>
+                        <option value='666'>666</option>
+                    </select>
 
-        </div>
-       <br></br><center><button type='submit' className="song-action-button">Create Playlist</button></center>
-    </form>
-</main>
+                </div>
+                <br></br><center><button type='submit' className="song-action-button">Create Playlist</button></center>
+            </form>
+        </main>
 
     );
 };
