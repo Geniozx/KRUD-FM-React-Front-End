@@ -318,6 +318,7 @@ button {
   padding-top:  20px;
   background-color: #000000;
   box-shadow: #000000;
+  opacity: 95%;
 }
 
 /* Song Form Label */
@@ -635,6 +636,7 @@ button {
   padding-top:  20px;
   background-color: #000000;
   box-shadow: #000000;
+  opacity: 95%;
 }
 
 /* Playlist Form Label */
