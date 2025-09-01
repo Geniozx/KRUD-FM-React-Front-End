@@ -80,7 +80,7 @@ const PlaylistDetails = (props) => {
           </div>
         )}
         <section>
-          <h3>Add a Song</h3>
+          <Link to={'/songs'}><h3>Add a Song</h3></Link>
           {/* <SongList songs={songs} handleAddSongToPlaylist={props.handleAddSongToPlaylist} playlistId={playlistId} /> */}
         </section>
       </section>
