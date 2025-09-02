@@ -19,11 +19,11 @@ const SongForm = (props) => {
   };
 
   return (
-    <main className="song-form-container">
+    <main>
       <h2>Add New Song</h2>
-      <form onSubmit={handleSubmit} className="form-container">
-        <div className="song-form-group">
-          <label htmlFor='track-input' className="song-form-label">Track Title</label>
+      <form onSubmit={handleSubmit} >
+        <div >
+          <label htmlFor='track-input' >Track Title</label>
           <input
             required
             type='text'
@@ -35,8 +35,8 @@ const SongForm = (props) => {
             placeholder="Enter track title"
           />
         </div>
-        <div className="song-form-group">
-          <label htmlFor='artist-input' className="song-form-label">Artist</label>
+        <div >
+          <label htmlFor='artist-input' >Artist</label>
           <input
             required
             type='text'
@@ -49,7 +49,7 @@ const SongForm = (props) => {
           />
         </div>
         <div className="song-form-group">
-          <label htmlFor='album-input' className="song-form-label">Album</label>
+          <label htmlFor='album-input' >Album</label>
           <input
             required
             type='text'
@@ -62,7 +62,7 @@ const SongForm = (props) => {
           />
         </div>
         <div className="song-form-group">
-          <label htmlFor='albumArt-input' className="song-form-label">Album Art URL</label>
+          <label htmlFor='albumArt-input' >Album Art URL</label>
           <input
             required
             type='text'
@@ -74,7 +74,7 @@ const SongForm = (props) => {
             placeholder="Enter album art URL"
           />
         </div>
-        <br></br><center><button type='submit' className="song-action-button">Add Song</button></center>
+        <br></br><center><button type='submit'>Add Song</button></center>
       </form>
     </main>
   )
