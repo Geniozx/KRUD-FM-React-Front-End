@@ -75,9 +75,6 @@ button {
   transition: border-color 0.25s;
 }
 
-/* ======================================== */
-/* ANIMATIONS */
-/* ======================================== */
 
 @keyframes slideInUp {
   from {
@@ -90,7 +87,6 @@ button {
   }
 }
 
-/* ============ Logo info ============ */
 
 .landing-header {
   text-align: center;
@@ -100,11 +96,9 @@ button {
 .logo {
   width: 80%;
   height: auto;
-  filter: drop-shadow(0 0 40px #000)    /* black edge */
+  filter: drop-shadow(0 0 40px #000)  
           drop-shadow(0 0 40px black)
-          drop-shadow(0 0 40px black); /* magenta glow */
-  /* background-color:brown;
-  opacity: 50%; */
+          drop-shadow(0 0 40px black); 
 }
 
 .krud-logo {
@@ -114,7 +108,7 @@ button {
   user-select: none;
 }
 
-/* After login: small, top left */
+
 .krud-logo--auth {
   position: fixed;
   top: 16px;
@@ -122,11 +116,6 @@ button {
   height: 48px;
 }
 
-/* ======================================== */
-/* SONG COMPONENTS STYLES */
-/* ======================================== */
-
-/* Song List Container */
 .song-list-container {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
@@ -156,7 +145,6 @@ button {
   background-clip: text !important;
 }
 
-/* Song Card Container */
 .song-card {
   background: black !important;
   opacity: 90%;
@@ -180,14 +168,13 @@ button {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Song Card Content */
 .song-card-content {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Song Title */
+
 .song-title {
   font-size: 1.8rem !important;
   font-weight: 800 !important;
@@ -197,7 +184,7 @@ button {
   line-height: 1.2 !important;
 }
 
-/* Song Artist */
+
 .song-artist {
   font-size: 1.1rem !important;
   font-weight: 600 !important;
@@ -206,7 +193,7 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Song Album */
+
 .song-album {
   font-size: 1rem !important;
   color: rgba(255, 255, 255, 0.8) !important;
@@ -215,7 +202,7 @@ button {
   line-height: 1.4 !important;
 }
 
-/* Song Details Container */
+
 .song-details-container {
   display: flex !important;
   justify-content: center !important;
@@ -226,7 +213,7 @@ button {
   opacity: 90%;
 }
 
-/* Song Details Card */
+
 .song-details-card {
   background: rgba(255, 255, 255, 0.1) !important;
   border-radius: 20px !important;
@@ -239,7 +226,7 @@ button {
   animation: slideInUp 0.6s ease-out !important;
 }
 
-/* Song Details Header */
+
 .song-details-header h1 {
   font-size: 2.5rem !important;
   font-weight: 800 !important;
@@ -252,7 +239,7 @@ button {
   background-clip: text !important;
 }
 
-/* Song Details Info */
+
 .song-details-info {
   margin: 24px 0 !important;
 }
@@ -269,7 +256,7 @@ button {
   font-weight: 700 !important;
 }
 
-/* Song Album Art */
+
 .song-album-art {
   max-width: 200px !important;
   height: auto !important;
@@ -278,7 +265,7 @@ button {
   margin: 16px 0 !important;
 }
 
-/* Song Loading */
+
 .song-loading {
   display: flex !important;
   justify-content: center !important;
@@ -289,7 +276,7 @@ button {
   background: black !important;
 }
 
-/* Song Form Container */
+
 .song-form-container {
   display: flex !important;
   flex-direction: column;
@@ -316,7 +303,7 @@ button {
   background-clip: text !important;
 }
 
-/* Song Form Group */
+
 .song-form-group {
   margin-bottom: 0px !important;
   padding-left: 160px;
@@ -328,7 +315,7 @@ button {
   opacity: 95%;
 }
 
-/* Song Form Label */
+
 .song-form-label {
   display: block !important;
   font-size: 1.1rem !important;
@@ -338,7 +325,7 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Song Form Input */
+
 .song-form-input {
   width: 100% !important;
   padding: 12px 16px !important;
@@ -361,7 +348,7 @@ button {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
-/* Song Selector Container */
+
 .song-selector-container {
   background: rgba(255, 255, 255, 0.1) !important;
   border-radius: 20px !important;
@@ -379,7 +366,7 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Song Selector Item */
+
 .song-selector-item {
   display: flex !important;
   justify-content: space-between !important;
@@ -397,7 +384,7 @@ button {
   transform: translateX(4px) !important;
 }
 
-/* Song Selector Info */
+
 .song-selector-info {
   font-size: 1.1rem !important;
   color: #ffffff !important;
@@ -405,7 +392,7 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Song Selector Button */
+
 .song-selector-button {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
   color: white !important;
@@ -423,7 +410,7 @@ button {
   box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3) !important;
 }
 
-/* Song Action Button */
+
 .song-action-button {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
   color: white !important;
@@ -442,11 +429,7 @@ button {
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4) !important;
 }
 
-/* ======================================== */
-/* PLAYLIST COMPONENTS STYLES */
-/* ======================================== */
 
-/* Playlist List Container */
 .playlist-list-container {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
@@ -476,7 +459,7 @@ button {
   background-clip: text !important;
 }
 
-/* Playlist Card Container */
+
 .playlist-card {
   background: black !important;
   opacity: 90%;
@@ -506,7 +489,7 @@ button {
   gap: 12px;
 }
 
-/* Playlist Title */
+
 .playlist-title {
   font-size: 1.8rem !important;
   font-weight: 800 !important;
@@ -516,7 +499,7 @@ button {
   line-height: 1.2 !important;
 }
 
-/* Playlist Description */
+
 .playlist-description {
   font-size: 1rem !important;
   color: rgba(255, 255, 255, 0.8) !important;
@@ -525,7 +508,7 @@ button {
   line-height: 1.4 !important;
 }
 
-/* Playlist Stats */
+
 .playlist-stats {
   display: flex !important;
   gap: 16px !important;
@@ -579,7 +562,7 @@ button {
   font-weight: 700 !important;
 }
 
-/* Playlist Details Container */
+
 .playlist-details-container {
   display: flex !important;
   justify-content: center !important;
@@ -593,12 +576,12 @@ button {
   background-attachment: fixed !important;}
 
 
-/* Playlist Details Info */
+
 .playlist-details-info {
   margin: 24px 0 !important;
 }
 
-/* Playlist Form Container */
+
 .playlist-form-container {
   display: flex;
   flex-direction: column;
@@ -628,12 +611,7 @@ button {
   background-clip: text !important;
 }
 
-/* .form-container {
-  background: black;
-  opacity: 90%;
-  width: 500px;
-} */
-/* Playlist Form Group */
+
 .playlist-form-group {
   margin-bottom: 24px !important;
     margin-bottom: 0px !important;
@@ -646,7 +624,7 @@ button {
   opacity: 95%;
 }
 
-/* Playlist Form Label */
+
 .playlist-form-label {
   display: block !important;
   font-size: 1.1rem !important;
@@ -656,7 +634,7 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Playlist Form Input */
+
 .playlist-form-input {
   width: 100% !important;
   padding: 12px 16px !important;
@@ -679,11 +657,7 @@ button {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
-/* ======================================== */
-/* DJ COMPONENTS STYLES */
-/* ======================================== */
 
-/* DJ Dashboard Container */
 .dj-dashboard-container {
   display: flex !important;
   flex-direction: column !important;
@@ -701,7 +675,7 @@ button {
   padding: 24px !important;
 }
 
-/* DJ Cards Grid */
+
 .dj-cards-grid {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
@@ -709,11 +683,11 @@ button {
   gap: 24px !important;
   max-width: 1200px !important;
   width: 40% !important;
-  /*changed the height from 100% here*/
+
   margin-top: 24px !important;
 }
 
-/* Welcome Header Card */
+
 .welcome-header-card {
   grid-column: 1 / -1 !important;
   background: rgba(0, 0, 0, 0.7) !important;
@@ -742,7 +716,7 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* DJ Card Container */
+
 .dj-card {
   background: black !important;
   opacity: 90%;
@@ -766,7 +740,7 @@ button {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* DJ Card Content */
+
 .dj-card-content {
   display: flex;
   flex-direction: column;
@@ -774,12 +748,9 @@ button {
   text-align: center;
 }
 
-/* DJ Name */
+
 .dj-name {
   font-size: 80%;
-  /* ============================================
-  the above adjusts the font sizing; important!
-  ============================================*/
   font-weight: 800;
   color: #ffffff !important;
   margin: 0 0 8px 0;
@@ -787,7 +758,7 @@ button {
   line-height: 1.2;
 }
 
-/* DJ Call Sign */
+
 .dj-call-sign {
   font-size: 1.1rem;
   font-weight: 600;
@@ -797,7 +768,7 @@ button {
   font-style: italic;
 }
 
-/* DJ Bio */
+
 .dj-bio {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8) !important;
@@ -806,7 +777,7 @@ button {
   line-height: 1.4;
 }
 
-/* DJ Location */
+
 .dj-location {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7) !important;
@@ -815,7 +786,7 @@ button {
   font-weight: 500;
 }
 
-/* DJ Logo */
+
 .dj-logo {
   width: 60px;
   height: 60px;
@@ -826,11 +797,7 @@ button {
   border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
-/* ======================================== */
-/* LANDING PAGE STYLES */
-/* ======================================== */
 
-/* Landing Page Container */
 .landing-container {
   display: flex !important;
   flex-direction: column !important;
@@ -848,7 +815,7 @@ button {
   padding: 24px !important;
 }
 
-/* Landing Content Card */
+
 .landing-content {
   display: flex;
   flex-direction: column;
@@ -861,7 +828,6 @@ button {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
   max-width: 600px !important;
   width: 50% !important;
-  /* animation: slideInUp 0.8s ease-out !important; */
 }
 
 .form-row {
@@ -873,7 +839,7 @@ button {
 
 .form-row label {
   flex: 1;
-  max-width: 150px; /* keeps all labels aligned */
+  max-width: 150px;
 }
 
 .form-row input {
@@ -904,7 +870,7 @@ button {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Landing Buttons */
+
 .landing-buttons {
   display: flex;
   padding: 20px;
@@ -945,115 +911,7 @@ button {
   box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
 }
 
-/* ======================================== */
-/* NAVBAR STYLES (CSS Modules) */
-/* ======================================== */
-/* 
-Note: These styles should be placed in src/components/NavBar/NavBar.module.css
-Copy the following styles to that file:
 
-.container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  padding: 0 24px;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.logo:hover {
-  color: #4facfe;
-  text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
-}
-
-.navLinks {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  gap: 8px;
-  font-weight: 500;
-}
-
-.navLinks li {
-  margin-left: 8px;
-}
-
-.navLinks li a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-}
-
-.navLinks li a:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
-}
-
-.welcome {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-  margin-right: 16px;
-}
-
-.signOut a {
-  color: #ff6b6b !important;
-}
-
-.signOut a:hover {
-  background: rgba(255, 107, 107, 0.1) !important;
-}
-
-@media only screen and (max-width: 768px) {
-  .container {
-    padding: 0 16px;
-  }
-  
-  .logo {
-    font-size: 1.2rem;
-  }
-  
-  .navLinks {
-    gap: 4px;
-  }
-  
-  .navLinks li {
-    margin-left: 4px;
-  }
-  
-  .navLinks li a {
-    padding: 6px 8px;
-    font-size: 0.8rem;
-  }
-  
-  .welcome {
-    display: none;
-  }
-}
-*/
-
-/* ======================================== */
-/* RESPONSIVE DESIGN */
-/* ======================================== */
-
-/* Responsive Design for Song Components */
 @media (max-width: 768px) {
   .song-list-container {
     grid-template-columns: 1fr !important;
@@ -1090,7 +948,7 @@ Copy the following styles to that file:
   }
 }
 
-/* Responsive Design for Playlist Components */
+
 @media (max-width: 768px) {
   .playlist-list-container {
     grid-template-columns: 3fr !important;
@@ -1127,7 +985,7 @@ Copy the following styles to that file:
   }
 }
 
-/* Responsive Design for DJ Dashboard */
+
 @media (max-width: 768px) {
   .dj-dashboard-container {
     padding: 16px;
@@ -1160,7 +1018,7 @@ Copy the following styles to that file:
   }
 }
 
-/* Responsive Design for Landing */
+
 @media (max-width: 768px) {
   .landing-container {
     padding: 16px;
@@ -1189,74 +1047,3 @@ Copy the following styles to that file:
   }
 }
 
-/* ======================================== */
-/* USAGE INSTRUCTIONS */
-/* ======================================== */
-
-/*
-TO USE THIS CSS FILE IN YOUR NEW REPOSITORY:
-
-1. Copy this entire file to your src/ directory as "KRUD-FM-Complete-Styles.css"
-
-2. Import it globally in your main.jsx:
-   import './KRUD-FM-Complete-Styles.css'
-
-3. Update your index.css with these dark mode overrides:
-   :root {
-     color-scheme: dark;
-     color: rgba(255, 255, 255, 0.87);
-     background-color: #0a0a0a;
-   }
-   
-   body {
-     margin: 0;
-     min-width: 320px;
-     min-height: 100vh;
-     background-color: #0a0a0a;
-     color: #ffffff;
-   }
-   
-   h1 {
-     font-size: 3.2em;
-     line-height: 1.1;
-     color: #ffffff;
-   }
-   
-   button {
-     border-radius: 8px;
-     border: 1px solid transparent;
-     padding: 0.6em 1.2em;
-     font-size: 1em;
-     font-weight: 500;
-     font-family: inherit;
-     background-color: #1a1a1a;
-     color: #ffffff;
-     cursor: pointer;
-     transition: border-color 0.25s;
-   }
-
-4. Apply the CSS classes to your components as shown in the examples below:
-
-SONG COMPONENTS:
-- SongList: Use "song-list-container" for main element, "song-card", "song-card-content", "song-title", "song-artist", "song-album" for individual songs
-- SongDetails: Use "song-details-container", "song-details-card", "song-details-header", "song-details-info", "song-action-button"
-- SongForm: Use "song-form-container", "song-form-group", "song-form-label", "song-form-input", "song-action-button"
-- SongSelector: Use "song-selector-container", "song-selector-item", "song-selector-info", "song-selector-button"
-
-PLAYLIST COMPONENTS:
-- PlaylistList: Use "playlist-list-container", "playlist-card", "playlist-card-content", "playlist-title", "playlist-description", "playlist-stats", "playlist-stat"
-- PlaylistDetails: Use "playlist-details-container", "playlist-details-card", "playlist-details-header", "playlist-details-info"
-- PlaylistForm: Use "playlist-form-container", "playlist-form-group", "playlist-form-label", "playlist-form-input", "song-action-button"
-
-DJ COMPONENTS:
-- Dashboard: Use "dj-dashboard-container", "dj-cards-grid", "welcome-header-card", "dj-card", "dj-card-content", "dj-logo", "dj-name", "dj-call-sign", "dj-bio", "dj-location"
-
-LANDING PAGE:
-- Landing: Use "landing-container", "landing-content", "landing-buttons", "landing-button", "landing-button secondary"
-
-NAVBAR:
-- Copy the CSS module styles to src/components/NavBar/NavBar.module.css
-- Apply the classes: "container", "logo", "navLinks", "welcome", "signOut"
-
-This will give you the complete KRUD-FM styling system in your new repository!
-*/

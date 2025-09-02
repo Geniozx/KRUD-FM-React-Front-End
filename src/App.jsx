@@ -85,8 +85,6 @@ const App = () => {
     const addedSong = await playlistService.postSongToPlaylist(playlistId, songId);
     setPlaylistSongs([addedSong, ...playlistSongs])
     navigate(`/playlists/${playlistId}`);
-    // const updatedPlaylist = await playlistService.index();
-    // return updatedPlaylist;
   };
 
   const handleRemoveSongFromPlaylist = async (playlistId, songId) => {

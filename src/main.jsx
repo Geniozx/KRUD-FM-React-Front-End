@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router'
 import { UserProvider } from './contexts/UserContext.jsx';
 import './index.css'
 import './SongComponents.css'  
-// added the above SongComponents.css
 import App from './App.jsx'
 import './CompleteStyles.css'
 

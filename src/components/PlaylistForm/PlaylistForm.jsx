@@ -5,12 +5,11 @@ import * as playlistService from '../../services/playlistService';
 const formInit = {
     playlist: '',
     genre: '',
-    station: '953'
+    station: '',
 };
 
 const PlaylistForm = (props) => {
     const { playlistId } = useParams();
-    // console.log(playlistId);
     const [formData, setFormData] = useState(formInit);
 
 
@@ -89,6 +88,7 @@ const PlaylistForm = (props) => {
                         <option value='953'>953</option>
                         <option value='97.9'>97.9</option>
                         <option value='666'>666</option>
+                        <option value='105.3'>105.3</option>
                     </select>
 
                 </div>

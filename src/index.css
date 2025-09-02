@@ -63,7 +63,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* below is newly added by Morgan for DJ dashboard details */
+
 .dj-image-container {
     position: relative;
     width: 100px;
