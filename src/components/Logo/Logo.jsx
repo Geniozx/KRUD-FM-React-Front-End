@@ -12,7 +12,7 @@ function Logo({ inNav = false }) {
     location.pathname === '/' || location.pathname === '/dashboard';
 
   const handleClick = () => {
-    if (isAuthed) navigate('/dashboard');
+    if (isAuthed) navigate('/');
   };
 
   const classes = ['krud-logo'];

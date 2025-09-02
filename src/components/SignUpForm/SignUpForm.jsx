@@ -51,17 +51,6 @@ const SignUpForm = () => {
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
         <div className="form-row">
-          <label htmlFor='logo'>Logo:</label>
-          <input
-            type='logo'
-            id='logo'
-            value={logo}
-            name='logo'
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="form-row">
           <label htmlFor='username'>Username:</label>
           <input
             type='text'
