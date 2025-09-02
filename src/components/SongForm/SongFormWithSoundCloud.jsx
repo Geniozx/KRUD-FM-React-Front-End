@@ -1,6 +1,6 @@
 // Entire new file added by Morgan Monday night: //
 import { useState } from 'react';
-import './SongFormWithSoundCloud.css';
+import '../../SongComponents.css';
 
 const SongFormWithSoundCloud = (props) => {
   const initState = {

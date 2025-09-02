@@ -35,9 +35,13 @@ const App = () => {
 
   useEffect(() => {
     const fetchAllPlaylists = async () => {
-      const playlistsData = await playlistService.index();
-
-      setPlaylists(playlistsData);
+      try {
+        const playlistsData = await playlistService.index();
+        setPlaylists(playlistsData || []);
+      } catch (error) {
+        console.error('Error fetching playlists:', error);
+        setPlaylists([]);
+      }
     };
     if (user) fetchAllPlaylists();
   }, [user]);
@@ -124,10 +128,10 @@ const App = () => {
                       playlist.author._id === user._id)} />} />
             <Route path='/songs/:songId' element={<SongDetails handleDeleteSong={handleDeleteSong} />} />
             <Route path='/songs/new' element={<SongForm handleAddSong={handleAddSong} />} />
-            // Below added by Morgan Mon night: //
+            {/* Below added by Morgan Mon night: */}
             <Route path='/songs/new-with-soundcloud' element={<SongFormWithSoundCloud handleAddSong={handleAddSong} />} />
             <Route path='/playlists/new-with-soundcloud' element={<PlaylistFormWithSoundCloud handleAddPlaylist={handleAddPlaylist} />} />
-//end
+            {/* end */}
           </>
         ) : (
           <>

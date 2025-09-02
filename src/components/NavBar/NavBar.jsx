@@ -26,8 +26,10 @@ const NavBar = () => {
         <li><Link to='/'>Dashboard</Link></li>
         <li><Link to='/playlists'>Playlists</Link></li>
         <li><Link to='/playlists/new'>New Playlist</Link></li>
+        <li><Link to='/playlists/new-with-soundcloud'>New Playlist + SoundCloud</Link></li>
         <li><Link to='/songs'>Songs</Link></li>
         <li><Link to='/songs/new'>New Song</Link></li>
+        <li><Link to='/songs/new-with-soundcloud'>New Song + SoundCloud</Link></li>
         <li className={styles.signOut}><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
       </ul>
     ) : (

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router';
-import './PlaylistFormWithSoundCloud.css';
+import '../../SongComponents.css';
 
 const formInit = {
     playlist: '',
