@@ -34,7 +34,7 @@ const create = async (playlistFormData) => {
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 const update = async (playlistId, playlistFormData) => {
     try {
@@ -78,7 +78,7 @@ const postSongToPlaylist = async (playlistId, songId) => {
         return res.json();
     } catch (error) {
         console.log(error);
-    };
+    }
 };
 
 const removeSongFromPlaylist = async (playlistId, songId) => {
@@ -94,7 +94,7 @@ const removeSongFromPlaylist = async (playlistId, songId) => {
         return res.json();
     } catch (error) {
         console.log(error);
-    };
+    }
 };
 
 
