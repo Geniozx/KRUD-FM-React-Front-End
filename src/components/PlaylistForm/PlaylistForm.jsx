@@ -6,7 +6,8 @@ const formInit = {
     playlist: '',
     description: '',
     genre: '',
-    station: '',
+    station: '953',
+    songs: [],
 };
 
 const PlaylistForm = (props) => {
