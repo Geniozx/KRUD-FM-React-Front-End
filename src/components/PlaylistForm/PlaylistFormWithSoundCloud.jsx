@@ -36,7 +36,7 @@ const PlaylistFormWithSoundCloud = (props) => {
                 playlist = await props.handleAddPlaylist(formData);
             }
             
-            // Add selected SoundCloud tracks to the playlist
+
             if (selectedTracks.length > 0 && playlist) {
                 await addTracksToPlaylist(playlist._id || playlist.id);
                 alert(`Playlist created with ${selectedTracks.length} SoundCloud tracks!`);
@@ -44,7 +44,7 @@ const PlaylistFormWithSoundCloud = (props) => {
                 alert('Playlist created successfully!');
             }
             
-            // Reset form
+
             setFormData(formInit);
             setSelectedTracks([]);
             setSearchResults([]);
@@ -56,7 +56,7 @@ const PlaylistFormWithSoundCloud = (props) => {
         }
     };
 
-    // Add tracks to playlist
+
     const addTracksToPlaylist = async (playlistId) => {
         for (const track of selectedTracks) {
             try {
@@ -79,7 +79,7 @@ const PlaylistFormWithSoundCloud = (props) => {
         }
     };
 
-    // Search SoundCloud tracks
+
     const searchSoundCloud = async () => {
         if (!searchQuery.trim()) return;
         
@@ -108,7 +108,7 @@ const PlaylistFormWithSoundCloud = (props) => {
         }
     };
 
-    // Toggle track selection
+
     const toggleTrackSelection = (track) => {
         if (selectedTracks.find(t => t.id === track.id)) {
             setSelectedTracks(selectedTracks.filter(t => t.id !== track.id));
@@ -117,22 +117,22 @@ const PlaylistFormWithSoundCloud = (props) => {
         }
     };
 
-    // Remove track from selection
+
     const removeTrack = (trackId) => {
         setSelectedTracks(selectedTracks.filter(t => t.id !== trackId));
     };
 
-    // Clear search results
+
     const clearSearch = () => {
         setSearchResults([]);
         setSearchQuery('');
         setSearchError('');
     };
 
-    // Simplified useEffect without playlistService
+
     useEffect(() => {
         if (playlistId) {
-            // For now, just set a placeholder - you can implement this later
+
             console.log('Playlist ID:', playlistId);
         }
         return () => setFormData(formInit);
@@ -142,7 +142,7 @@ const PlaylistFormWithSoundCloud = (props) => {
         <main className="playlist-form-container">
             <h2>{playlistId ? 'Edit Playlist' : 'Create New Playlist'}</h2>
             
-            {/* Playlist Form */}
+
             <form onSubmit={handleSubmit} className="form-container">
                 <div className="playlist-form-group">
                     <label htmlFor='playlist-input' className="playlist-form-label">Playlist Name</label>
@@ -198,7 +198,7 @@ const PlaylistFormWithSoundCloud = (props) => {
                 </div>
             </form>
 
-            {/* SoundCloud Search Section */}
+
             <div className="soundcloud-search-section">
                 <h3>🎵 Add SoundCloud Tracks</h3>
                 <div className="search-input-group">
@@ -224,14 +224,14 @@ const PlaylistFormWithSoundCloud = (props) => {
                     )}
                 </div>
 
-                {/* Search Error */}
+
                 {searchError && (
                     <div className="search-error">
                         {searchError}
                     </div>
                 )}
 
-                {/* Search Results */}
+
                 {searchResults.length > 0 && (
                     <div className="search-results">
                         <h4>Search Results:</h4>
@@ -271,7 +271,7 @@ const PlaylistFormWithSoundCloud = (props) => {
                 )}
             </div>
 
-            {/* Selected Tracks Summary */}
+
             {selectedTracks.length > 0 && (
                 <div className="selected-tracks">
                     <h4>Selected Tracks ({selectedTracks.length})</h4>
@@ -299,7 +299,7 @@ const PlaylistFormWithSoundCloud = (props) => {
                 </div>
             )}
 
-            {/* Create Button */}
+
             <div className="form-actions">
                 <button 
                     onClick={handleSubmit}
@@ -314,5 +314,3 @@ const PlaylistFormWithSoundCloud = (props) => {
 };
 
 export default PlaylistFormWithSoundCloud;
-
-// END
