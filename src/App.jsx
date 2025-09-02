@@ -73,7 +73,7 @@ const App = () => {
 
   const handleDeleteSong = async (songId) => {
     const deletedSong = await songService.deleteSong(songId);
-    setSongs(songs.filter((song) => song._id !== deletedSong._id));
+    setSongs(prev => prev.filter(song => song._id !== deletedSong._id));
     navigate('/songs');
   };
 
@@ -89,6 +89,7 @@ const App = () => {
   const handleRemoveSongFromPlaylist = async (playlistId, songId) => {
     await playlistService.removeSongFromPlaylist(playlistId, songId);
     const updatedPlaylist = await playlistService.show(playlistId);
+    setPlaylistSongs(updatedPlaylist.songs);
     return updatedPlaylist;
   }
 

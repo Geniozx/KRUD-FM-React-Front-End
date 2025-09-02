@@ -1,40 +1,3 @@
-/* ======================================== */
-/* KRUD-FM COMPLETE STYLING SHEET */
-/* ======================================== */
-/* 
-This file contains ALL CSS styling for the KRUD-FM Radio Station application.
-Copy this entire file to your new repository and import it globally in main.jsx or App.jsx
-
-File Structure Requirements:
-- src/
-  - components/
-    - SongList/
-    - SongDetails/
-    - SongForm/
-    - SongSelector/
-    - PlaylistList/
-    - PlaylistDetails/
-    - PlaylistForm/
-    - Dashboard/
-    - Landing/
-    - NavBar/
-  - contexts/
-  - services/
-  - main.jsx
-  - App.jsx
-  - index.css (for global overrides)
-
-Usage:
-1. Copy this file to your src/ directory
-2. Import it in main.jsx: import './KRUD-FM-Complete-Styles.css'
-3. Update your index.css with the dark mode overrides (see bottom of this file)
-4. Apply the CSS classes to your components as shown in the comments
-*/
-
-/* ======================================== */
-/* GLOBAL DARK MODE OVERRIDES */
-/* ======================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap');
 :root {
   color-scheme: dark;
@@ -208,9 +171,15 @@ button {
   justify-content: center !important;
   align-items: flex-start !important;
   min-height: 100vh !important;
-  padding: 24px !important;
+  padding: 100px 24px 24px !important;
   background: black !important;
   opacity: 90%;
+  background: black;
+  background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 
@@ -568,12 +537,13 @@ button {
   justify-content: center !important;
   align-items: flex-start !important;
   min-height: 100vh !important;
-  padding: 24px !important;
+  padding: 100px 24px 24px !important;
   background-image: url('https://radiofidelity.com/wp-content/uploads/2020/07/Ghetto-Blaster-1-scaled.jpeg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  background-attachment: fixed !important;}
+  background-attachment: fixed !important;
+}
 
 
 
@@ -750,7 +720,7 @@ button {
 
 
 .dj-name {
-  font-size: 80%;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #ffffff !important;
   margin: 0 0 8px 0;
@@ -946,10 +916,6 @@ button {
   .song-form-container h2 {
     font-size: 1.8rem !important;
   }
-}
-
-
-@media (max-width: 768px) {
   .playlist-list-container {
     grid-template-columns: 3fr !important;
     gap: 16px !important;
@@ -983,10 +949,6 @@ button {
   .playlist-form-container h2 {
     font-size: 1.8rem !important;
   }
-}
-
-
-@media (max-width: 768px) {
   .dj-dashboard-container {
     padding: 16px;
   }
@@ -1016,10 +978,6 @@ button {
   .welcome-header-card p {
     font-size: 1.1rem;
   }
-}
-
-
-@media (max-width: 768px) {
   .landing-container {
     padding: 16px;
   }
