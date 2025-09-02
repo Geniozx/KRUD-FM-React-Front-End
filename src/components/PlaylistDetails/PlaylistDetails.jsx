@@ -58,6 +58,11 @@ const PlaylistDetails = (props) => {
         </div>
         {playlist.author._id === user._id && (
           <div>
+          <button
+              className="song-action-button"
+              onClick={() => navigate(`/playlists/${playlistId}/edit`)}>
+              Edit Playlist
+            </button>
             <button
               className="song-action-button"
               onClick={() => props.handleDeletePlaylist(playlistId)}>
