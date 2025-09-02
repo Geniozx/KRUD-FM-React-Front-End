@@ -429,7 +429,7 @@ button {
   box-shadow: 0 0 6px rgba(255,119,0,0.6);
 }
 
-/* Buttons */
+
 .search-button,
 .clear-button,
 .add-song-btn {
@@ -470,7 +470,7 @@ button {
   background: #36a436;
 }
 
-/* Error message */
+
 .search-error {
   background: #ff4d4d;
   color: #fff;
@@ -480,7 +480,7 @@ button {
   font-size: 0.9rem;
 }
 
-/* Search results */
+
 .search-results {
   margin-top: 1.5rem;
 }
@@ -490,14 +490,14 @@ button {
   color: #ddd;
 }
 
-/* Result list */
+
 .results-list {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-/* Individual track result */
+
 .track-result {
   display: flex;
   align-items: center;
@@ -520,7 +520,7 @@ button {
   background: #333;
 }
 
-/* Track content */
+
 .track-content {
   display: flex;
   align-items: center;
@@ -570,7 +570,6 @@ button {
   align-items: center;
 }
 
- /* PLAYLIST */
 
 .playlist-list-container {
   display: grid !important;
