@@ -14,7 +14,10 @@ const SongList = (props) => {
   return (
     <main className="song-list-container">
       <h1>Song Library</h1>
-      {props.songs.map((song) => (
+      {props.songs
+        .slice()
+        .sort((a, b) => a.track.localeCompare(b.track))
+        .map((song) => (
         <div key={song._id} className="song-card">
           <div className="song-card-content">
             <Link to={`/songs/${song._id}`}>
