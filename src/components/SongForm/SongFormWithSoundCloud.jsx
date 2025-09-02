@@ -1,4 +1,5 @@
-// Entire new file added by Morgan Monday night: //
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`;
+
 import { useState } from 'react';
 import '../../CompleteStyles.css';
 
@@ -50,7 +51,7 @@ const SongFormWithSoundCloud = (props) => {
       }
     } catch (error) {
       console.error('Search error:', error);
-      setSearchError('Network error. Please check your connection.');
+      // setSearchError('Network error. Please check your connection.');
     } finally {
       setIsSearching(false);
     }
