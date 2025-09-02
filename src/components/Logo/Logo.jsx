@@ -1,4 +1,3 @@
-// src/components/Logo.jsx
 import { useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';

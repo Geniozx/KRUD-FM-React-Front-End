@@ -33,10 +33,7 @@ const SignUpForm = () => {
     evt.preventDefault();
     try {
       const newUser = await signUp(formData);
-      // Call the setUser function to update the user state, just like normal.
       setUser(newUser);
-      // Take the user to the (non-existent) home page after they sign up.
-      // We'll get to this shortly!
       navigate('/');
     } catch (err) {
       setMessage(err.message);

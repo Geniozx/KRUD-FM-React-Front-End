@@ -17,7 +17,6 @@ import SongForm from './components/SongForm/SongForm';
 import { UserContext } from './contexts/UserContext';
 import PlaylistDetails from './components/PlaylistDetails/PlaylistDetails';
 
-import './SongComponents.css';
 
 
 const App = () => {
@@ -74,7 +73,7 @@ const App = () => {
 
   const handleDeleteSong = async (songId) => {
     const deletedSong = await songService.deleteSong(songId);
-    setSongs(songs.filter((song) => song._id !== deletedSong._id));
+    setSongs(prev => prev.filter(song => song._id !== deletedSong._id));
     navigate('/songs');
   };
 
@@ -85,13 +84,12 @@ const App = () => {
     const addedSong = await playlistService.postSongToPlaylist(playlistId, songId);
     setPlaylistSongs([addedSong, ...playlistSongs])
     navigate(`/playlists/${playlistId}`);
-    // const updatedPlaylist = await playlistService.index();
-    // return updatedPlaylist;
   };
 
   const handleRemoveSongFromPlaylist = async (playlistId, songId) => {
     await playlistService.removeSongFromPlaylist(playlistId, songId);
     const updatedPlaylist = await playlistService.show(playlistId);
+    setPlaylistSongs(updatedPlaylist.songs);
     return updatedPlaylist;
   }
 

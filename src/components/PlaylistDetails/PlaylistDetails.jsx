@@ -1,10 +1,8 @@
-import { useParams, Link, useNavigate } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
-import SongList from '../SongList/SongList';
 
 import * as playlistService from '../../services/playlistService';
-import * as songService from '../../services/songService';
 
 
 const PlaylistDetails = (props) => {
@@ -26,7 +24,7 @@ const PlaylistDetails = (props) => {
 
   const handleRemoveSong = async (playlistId, songId) => {
     const updatedPlaylist = await props.handleRemoveSongFromPlaylist(playlistId, songId);
-    setPlaylist(updatedPlaylist); // refreshes the UI
+    setPlaylist(updatedPlaylist);
   };
 
   if (!playlist) return <main>Loading........</main>;
@@ -80,6 +78,3 @@ const PlaylistDetails = (props) => {
 
 
 export default PlaylistDetails;
-
-
-
