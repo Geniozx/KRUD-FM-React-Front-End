@@ -75,6 +75,30 @@ const SongFormWithSoundCloud = (props) => {
     setSearchError('');
   };
 
+  // Add individual song from search results
+  const handleAddIndividualSong = async (track) => {
+    try {
+      // Create song data from the track
+      const songData = {
+        track: track.title,
+        artist: track.user?.username,
+        album: track.title,
+        albumArt: track.artwork_url || track.user?.avatar_url || '',
+        soundcloudTrackId: track.id
+      };
+      
+      // Add the song using the existing handler
+      await props.handleAddSong(songData);
+      
+      // Remove this track from search results (silent success)
+      setSearchResults(prev => prev.filter(t => t.id !== track.id));
+      
+    } catch (error) {
+      console.error('Error adding song:', error);
+      // Silent error handling - just log to console
+    }
+  };
+
   return (
     <main className="song-form-container">
       <h2>Add New Song</h2>
@@ -121,23 +145,36 @@ const SongFormWithSoundCloud = (props) => {
                 <div 
                   key={track.id} 
                   className={`track-result ${selectedTrack?.id === track.id ? 'selected' : ''}`}
-                  onClick={() => selectTrack(track)}
                 >
-                  <img 
-                    src={track.artwork_url || track.user?.avatar_url || '/default-album-art.png'} 
-                    alt={track.title}
-                    className="track-artwork"
-                    onError={(e) => {
-                      e.target.src = '/default-album-art.png';
-                    }}
-                  />
-                  <div className="track-info">
-                    <h5 className="track-title">{track.title}</h5>
-                    <p className="track-artist">{track.user?.username}</p>
-                    <p className="track-genre">{track.genre}</p>
+                  <div className="track-content" onClick={() => selectTrack(track)}>
+                    <img 
+                      src={track.artwork_url || track.user?.avatar_url || '/default-album-art.png'} 
+                      alt={track.title}
+                      className="track-artwork"
+                      onError={(e) => {
+                        e.target.src = '/default-album-art.png';
+                      }}
+                    />
+                    <div className="track-info">
+                      <h5 className="track-title">{track.title}</h5>
+                      <p className="track-artist">{track.user?.username}</p>
+                      <p className="track-genre">{track.genre}</p>
+                    </div>
+                    <div className="track-duration">
+                      {Math.floor(track.duration / 60)}:{(track.duration % 60).toString().padStart(2, '0')}
+                    </div>
                   </div>
-                  <div className="track-duration">
-                    {Math.floor(track.duration / 60)}:{(track.duration % 60).toString().padStart(2, '0')}
+                  <div className="track-actions">
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddIndividualSong(track);
+                      }}
+                      className="add-song-btn"
+                      title={`Add "${track.title}" to your library`}
+                    >
+                      ➕ Add Song
+                    </button>
                   </div>
                 </div>
               ))}
