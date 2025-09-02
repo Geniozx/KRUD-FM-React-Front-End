@@ -4,6 +4,7 @@ import * as playlistService from '../../services/playlistService';
 
 const formInit = {
     playlist: '',
+    description: '',
     genre: '',
     station: '',
 };
