@@ -53,3 +53,4 @@ The KRUDFM application utilizes a MongoDB database with 2 data entities, as well
 - Boombox stock image from Google.com
 - Logo designed via Canva App
 - Debugging with the assistance of ChatGPT
+- Soundcloud API by Soundcloud INC
