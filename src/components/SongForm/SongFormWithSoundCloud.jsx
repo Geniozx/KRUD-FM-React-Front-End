@@ -28,7 +28,6 @@ const SongFormWithSoundCloud = (props) => {
     props.handleAddSong(formData);
   };
 
-  // Search SoundCloud tracks
   const searchSoundCloud = async () => {
     if (!searchQuery.trim()) return;
     
@@ -51,13 +50,11 @@ const SongFormWithSoundCloud = (props) => {
       }
     } catch (error) {
       console.error('Search error:', error);
-      // setSearchError('Network error. Please check your connection.');
     } finally {
       setIsSearching(false);
     }
   };
 
-  // Select a track from search results
   const selectTrack = (track) => {
     setSelectedTrack(track);
     setFormData({
@@ -69,17 +66,15 @@ const SongFormWithSoundCloud = (props) => {
     });
   };
 
-  // Clear search results
   const clearSearch = () => {
     setSearchResults([]);
     setSearchQuery('');
     setSearchError('');
   };
 
-  // Add individual song from search results
   const handleAddIndividualSong = async (track) => {
     try {
-      // Create song data from the track
+
       const songData = {
         track: track.title,
         artist: track.user?.username,
@@ -88,25 +83,20 @@ const SongFormWithSoundCloud = (props) => {
         soundcloudTrackId: track.id
       };
       
-      // Add the song using the existing handler
       await props.handleAddSong(songData);
       
-      // Remove this track from search results (silent success)
       setSearchResults(prev => prev.filter(t => t.id !== track.id));
       
     } catch (error) {
       console.error('Error adding song:', error);
-      // Silent error handling - just log to console
+      
     }
   };
 
   return (
     <main className="song-form-container">
-      <h2>Add New Song</h2>
-      
-      {/* SoundCloud Search Section */}
       <div className="soundcloud-search-section">
-        <h3>🎵 Search SoundCloud</h3>
+        <h3>Search SoundCloud</h3>
         <div className="search-input-group">
           <input
             type="text"
@@ -130,14 +120,12 @@ const SongFormWithSoundCloud = (props) => {
           )}
         </div>
 
-        {/* Search Error */}
         {searchError && (
           <div className="search-error">
             {searchError}
           </div>
         )}
 
-        {/* Search Results */}
         {searchResults.length > 0 && (
           <div className="search-results">
             <h4>Search Results:</h4>
@@ -184,7 +172,7 @@ const SongFormWithSoundCloud = (props) => {
         )}
       </div>
 
-      {/* Song Form */}
+
       <form onSubmit={handleSubmit} className="form-container">
         <div className="song-form-group">
           <label htmlFor='track-input' className="song-form-label">Track Title</label>
@@ -239,7 +227,7 @@ const SongFormWithSoundCloud = (props) => {
           />
         </div>
         
-        {/* Hidden field for SoundCloud track ID */}
+
         <input type="hidden" name="soundcloudTrackId" value={formData.soundcloudTrackId} />
         
         <br></br>
@@ -249,10 +237,10 @@ const SongFormWithSoundCloud = (props) => {
           </button>
         </center>
         
-        {/* Selected Track Info */}
+
         {selectedTrack && (
           <div className="selected-track-info">
-            <p>✅ Selected: <strong>{selectedTrack.title}</strong> by <strong>{selectedTrack.user?.username}</strong></p>
+            <p>Selected: <strong>{selectedTrack.title}</strong> by <strong>{selectedTrack.user?.username}</strong></p>
           </div>
         )}
       </form>
@@ -261,5 +249,3 @@ const SongFormWithSoundCloud = (props) => {
 };
 
 export default SongFormWithSoundCloud; 
-
-// End
