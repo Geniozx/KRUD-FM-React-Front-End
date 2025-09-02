@@ -17,7 +17,6 @@ import SongForm from './components/SongForm/SongForm';
 import { UserContext } from './contexts/UserContext';
 import PlaylistDetails from './components/PlaylistDetails/PlaylistDetails';
 
-import './SongComponents.css';
 
 
 const App = () => {
